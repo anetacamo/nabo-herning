@@ -2,7 +2,7 @@
 
 - add version
 - add last update of THE LIST
-- implement user friendly editor on top
+- implement user friendly editor on top > Tina.io
 - organize the tags
 - active tag should be always visisble
 - scss colors name convention
@@ -10,8 +10,11 @@
 - page slugs in variable
 - Remove the nabo.vercel.app URL
 - markers on the map are blinking
-- add carousel to other "something"
-- add filters to be read from the slug
+
+- form: after choosing category, show existing tags linked to category
+- form: change invisible to keywords and hide them from the form
+- way to add translations
+- add no blogs found when search is very specific
 
 - add more colors and add colors automatically to tags unless they are chosen
 - add default image
@@ -23,5 +26,7 @@
 
 ### DONE
 
+- add carousel to other "something"
+- add filters to be read from the slug
 - fixed wrong color names
 - added a fallback image

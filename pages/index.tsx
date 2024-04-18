@@ -9,6 +9,7 @@ import pagedata from "../texts/home.json";
 import Blog from "../types/card.type";
 import styles from "./Home/Home.module.scss";
 import { fetchGoogleSheetData } from "./../hooks/data";
+import { useRouter } from "next/router";
 
 export async function getStaticProps() {
   const blogs = await fetchGoogleSheetData();
@@ -29,6 +30,9 @@ export default function Home({ blogs }) {
   //const { blogs } = useGoogleSheetsData();
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
 
+  const router = useRouter();
+
+  // watch for changes in tag, search and category and filter the blogs!
   useEffect(() => {
     const filtered = blogs
       .filter((blog: Blog) => blog.tags?.toLowerCase().includes(tag))
@@ -40,15 +44,47 @@ export default function Home({ blogs }) {
       )
       .filter((blog: Blog) => blog.type?.toLowerCase().includes(category));
     setFilteredBlogs(filtered);
-  }, [category, tag, searchQuery, blogs]);
+  }, [category, tag, searchQuery]);
+
+  //read stuff from the url, only on initial load
+  useEffect(() => {
+    if (!router?.isReady) return;
+    const category = router.query.category;
+    const tag = router.query.tag;
+    if (category) {
+      onCategorySet(category as string);
+    }
+    if (tag) {
+      onTagSet(tag as string);
+    }
+  }, [router.isReady]);
+
+  // watch for chages in tag and category and update the URL
+  useEffect(() => {
+    if (category != "" && tag === "") {
+      router.push(`/?category=${encodeURIComponent(category.toLowerCase())}`);
+    }
+
+    if (category != "" && tag != "") {
+      router.push(
+        `/?category=${encodeURIComponent(
+          category.toLowerCase()
+        )}&tag=${encodeURIComponent(tag.toLowerCase())}`
+      );
+    }
+    if (category === "" && tag != "") {
+      router.push(`/?tag=${encodeURIComponent(tag.toLowerCase())}`);
+    }
+    if (category === "" && tag === "") {
+      router.push(`/`);
+    }
+  }, [category, tag]);
 
   const onCategorySet = (cat: string) => {
     if (category === cat) {
       setCategory("");
-      setTag("");
     } else {
       setCategory(cat.toLowerCase());
-      setTag("");
     }
   };
 

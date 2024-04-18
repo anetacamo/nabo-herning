@@ -1,7 +1,6 @@
 import React from "react";
 import { DefaultLayout } from "../../layouts/DefaultLayout/DefaultLayout";
 import CrookedImage from "../../components/CrookedImage/CrookedImage";
-import CardsSheets from "../../components/CardsSheets/CardsSheets";
 import IconHolder from "../../components/IconHolder/IconHolder";
 import Tags from "../../components/Tags/Tags";
 import styles from "./card.module.scss";
@@ -10,8 +9,9 @@ import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 import texts from "../../texts/single-page.json";
-
 import { fetchGoogleSheetData } from "../../hooks/data";
+import CardsSheetsCarousel from "../../components/CardsSheetsCarousel/CardsSheetsCarousel";
+import Link from "next/link";
 
 interface SinglePageProps {
   blog: Blog; // Specify the type of blog here
@@ -32,7 +32,7 @@ export async function getServerSideProps(context: { params: { slug: any } }) {
     (b: Blog) => b.type?.split(",")[0] === blogType
   );
 
-  const relatedBlogs = allRelated.slice(0, 5);
+  const relatedBlogs = allRelated;
 
   return {
     props: {
@@ -83,13 +83,15 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
         <h4>{texts.howToUse}</h4>
         <p style={{ whiteSpace: "pre-wrap" }}>{howtouseWithLineBreaks}</p>
       </section>
-      <section className={`bg-black`}>
+      <section className={`bg-${getColor(blog?.type)}`}>
         <h2>
-          {texts.other} {blog?.type.split(",")[0]}
+          <Link href={`/?category=${blog?.type.split(",")[0].toLowerCase()}`}>
+            {`${texts.other} ${blog?.type.split(",")[0]}`}
+          </Link>
         </h2>
 
         {relatedBlogs && relatedBlogs.length > 0 ? (
-          <CardsSheets members={relatedBlogs} />
+          <CardsSheetsCarousel members={relatedBlogs} />
         ) : (
           <p>No related blogs found.</p>
         )}

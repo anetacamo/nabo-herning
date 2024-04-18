@@ -19,15 +19,6 @@ export default function CardsSheets(members: { members: Blog[] }) {
   return (
     <div className={`flex-center ${styles.container}`}>
       {members.members.map((post: Blog, index: number) => (
-        // <a
-        //   href={`/cards/${slugify(post.title)}`}
-        //   key={index}
-        //   rel="noopener noreferrer"
-        //   className={`${styles.link} border-${getColor(
-        //     post.type
-        //   )} bg-hover-${getColor(post.type)}`}
-        // >
-
         <Link href={`/cards/${slugify(post.title)}`} key={index}>
           <a
             className={`${styles.link} border-${getColor(

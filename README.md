@@ -28,6 +28,9 @@ git pull origin main --allow-unrelated-histories
 ```
 
 4. add vercel for deployment
+
+- add env variables to the setings
+
 5. create the google sheets and set up for the data structure
 6. link google sheets to the db
 7. set up the mapbox
