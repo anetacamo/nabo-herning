@@ -1,27 +1,12 @@
+colors: "green, salmon, yellow, pink, blue, darkblue, greenlight, pinkdark"
+
+```json
 [
   {
     "name": "event",
-    "color": "red",
+    "color": "green",
     "about_en": "Exhibition spaces - these are places that show visual art. Start here if you're looking for a place to show sculptures, drawings, paintings, etc. Filter with subtags like gallery, museum, or cafe, to find places with different barriers-to-entry.",
     "about": "Steder der udstiller visuel kunst, for eks; tegninger, malerier, skulpturer. Søg gennem sub-tags ligesom cafe, galleri, museum, til at spise ned. Husk at visuel kunst kan udstillets alle mulige stede, ligesom butikker og kulturhuse, også."
-  },
-  {
-    "name": "venue",
-    "color": "yellow",
-    "about_en": "Venues - these are places for exhibiting art on the stage, performance art, music, theater, etc. ",
-    "about": "det er steder for udstilling af kunst på scenen, performancekunst, musik, teater mv."
-  },
-  {
-    "name": "fællesskab",
-    "color": "blue",
-    "about_en": "Communities - these are groups and collectives, not always with a dedicated location, that meet around a shared interest. Find a crew to skateboard with, or a team of DJs to play at your event.",
-    "about": "disse er grupper og kollektiver, der mødes omkring en fælles interesse. Find et hold at skateboarde med eller et DJ kollektiv til at spille til dit arrangement."
-  },
-  {
-    "name": "læring",
-    "color": "darkblue",
-    "about_en": "Learning - these are places that have a focus on learning. Here you can find place to learn everything from pottery, to filmmaking, to welding, to fundraising. Some run years-long programs, and some host hour-long workshops.",
-    "about": "Disser er steder, der har fokus på læring. Her kan du finde steder at lære alt fra keramik, til filmproduktion, til svejsning, til fundraising. Nogle kører årelange programmer, og nogle afholder timelange workshops."
   },
   {
     "name": "rådgivning",
@@ -36,3 +21,4 @@
     "about": "Disse er steder, der tilbyder ting, du måske har brug for, når du arbejder med kunst og kultur. En gratis møbelbutik, et trykkeri, steder at låne tøj mv."
   }
 ]
+```

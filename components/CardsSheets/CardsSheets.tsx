@@ -7,6 +7,7 @@ import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 import Link from "next/link";
+import ImageWithFallBack from "../ImageWithFallBack/ImageWithFallBack";
 
 function truncate(str: string, n: number): string {
   const shortenedString = str.slice(0, n - 1);
@@ -26,6 +27,7 @@ export default function CardsSheets(members: { members: Blog[] }) {
         //     post.type
         //   )} bg-hover-${getColor(post.type)}`}
         // >
+
         <Link href={`/cards/${slugify(post.title)}`} key={index}>
           <a
             className={`${styles.link} border-${getColor(
@@ -35,13 +37,20 @@ export default function CardsSheets(members: { members: Blog[] }) {
             <div
               className={`${styles.image} border-bottom-${getColor(post.type)}`}
             >
-              <Image
-                src={`/images/${slugify(post?.title)}.jpg`}
-                alt={post?.title}
-                layout="fill"
-                objectFit="cover"
-              />
+              {post.image ? (
+                <img
+                  src={post.image}
+                  alt={post?.title}
+                  className={styles.image}
+                />
+              ) : (
+                <ImageWithFallBack
+                  src={`/images/${slugify(post?.title)}.jpg`}
+                  alt={post?.title}
+                />
+              )}
             </div>
+
             {post?.type && (
               <p
                 className={`${styles.type} border-${getColor(

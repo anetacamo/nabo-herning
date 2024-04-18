@@ -11,9 +11,11 @@ export async function fetchGoogleSheetData(): Promise<Blog[]> {
   const cardsFetchUrl = process.env.CARDS_FETCH as string;
 
   const response = await fetch(cardsFetchUrl);
+  console.log(response);
 
   const csv = await response.text();
   const results = Papa.parse<Blog>(csv, { header: true });
+  console.log(results);
   const parsedBlogs = results.data.filter(
     (card: Blog, index: number) => index > 0 && card?.title
   );

@@ -10,9 +10,7 @@ import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 import texts from "../../texts/single-page.json";
-import radioTracks from "../../texts/radioTracks.json";
 
-import Papa from "papaparse";
 import { fetchGoogleSheetData } from "../../hooks/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -50,11 +48,8 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
     .replace(/\\n/g, "\n")
     .replace(/\\+/g, "");
 
-  const howtouseWithLineBreaks = blog?.howtouse
-    .replace(/\\n/g, "\n")
-    .replace(/\\+/g, "");
-
-  const radioTrack = radioTracks.find((radio) => radio.name === blog?.title);
+  const howtouseWithLineBreaks =
+    blog?.howtouse || "".replace(/\\n/g, "\n").replace(/\\+/g, "");
 
   return (
     <DefaultLayout
@@ -89,34 +84,6 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
         <h4>{texts.howToUse}</h4>
         <p style={{ whiteSpace: "pre-wrap" }}>{howtouseWithLineBreaks}</p>
       </section>
-
-      {radioTrack && (
-        <section className={`bg-${getColor(blog?.type)}`}>
-          <h6>
-            radio Sydhavns Bølgen{" "}
-            <FontAwesomeIcon icon={faAsterisk} className={`${styles.icon}`} />{" "}
-            <a
-              href="https://www.sydhavnsboelgen.dk/"
-              rel="noopener noreferrer"
-              target="_blank"
-              style={{ color: "black" }}
-            >
-              {texts.radioAllEpisodes}
-            </a>
-          </h6>
-          <h4>
-            {texts.radioTitle} {blog?.title}!
-          </h4>
-          {/* <p>{`/radio/${slugify(blog?.title)}.mp3`}</p> */}
-          <p style={{ maxWidth: 600, marginBottom: 32 }}>
-            {radioTrack.description || ""}
-          </p>
-          <audio controls>
-            <source src={`/radio/frontlberne.mp3`} type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
-        </section>
-      )}
       <section className={`bg-black`}>
         <h2>
           {texts.other} {blog?.type.split(",")[0]}

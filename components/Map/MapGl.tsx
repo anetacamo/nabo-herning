@@ -15,17 +15,37 @@ interface MapGlProps {
 export default function MapGl({ posts }: MapGlProps) {
   const [name, setName] = useState("");
   const [viewState, setViewState] = useState({
-    latitude: 56.15520483651387,
-    longitude: 10.245000205993804,
-    zoom: 12,
+    latitude: 56.03550959531433,
+    longitude: 12.582182444184792,
+    zoom: 11,
   });
 
   return (
     <div className={`${styles.mapwhole} desktop`}>
       <div className={styles.textContainer}>
         <div className={styles.mainTitle}>
-          <h1>{pagedata.title}</h1>
-          <p>{pagedata.description}</p>
+          <h1>
+            <span className={`${styles.highlighted} bg-blue`}>
+              Kultur Kortet
+            </span>
+            <br />
+            <span className={`${styles.highlighted} bg-blue`}>Helsingør</span>
+          </h1>
+          <p>
+            {/* <span className="highlighted bg-blue">{pagedata.description}</span> */}
+            <span className={`${styles.highlighted} bg-blue`}>
+              Kort og liste over organisationer,
+            </span>{" "}
+            <span className={`${styles.highlighted} bg-blue`}>
+              udstillingsteder, venues, eventskabere,
+            </span>{" "}
+            <span className={`${styles.highlighted} bg-blue`}>
+              fælleskaber, og andre ressourcer
+            </span>{" "}
+            <span className={`${styles.highlighted} bg-blue`}>
+              i det Aarhusianske kulturmiljø.
+            </span>
+          </p>
         </div>
       </div>
       <Map
@@ -33,7 +53,7 @@ export default function MapGl({ posts }: MapGlProps) {
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
         maxZoom={17}
-        minZoom={12}
+        minZoom={10}
         scrollZoom={false}
         mapStyle={process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL}
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
