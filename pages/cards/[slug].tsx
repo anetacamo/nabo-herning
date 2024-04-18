@@ -5,14 +5,13 @@ import CardsSheets from "../../components/CardsSheets/CardsSheets";
 import IconHolder from "../../components/IconHolder/IconHolder";
 import Tags from "../../components/Tags/Tags";
 import styles from "./card.module.scss";
-import { faLocation, faAsterisk } from "@fortawesome/free-solid-svg-icons";
+import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 import texts from "../../texts/single-page.json";
 
 import { fetchGoogleSheetData } from "../../hooks/data";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface SinglePageProps {
   blog: Blog; // Specify the type of blog here

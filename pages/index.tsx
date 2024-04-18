@@ -12,7 +12,6 @@ import { fetchGoogleSheetData } from "./../hooks/data";
 
 export async function getStaticProps() {
   const blogs = await fetchGoogleSheetData();
-  console.log("after blogs fetch");
 
   return {
     props: {
