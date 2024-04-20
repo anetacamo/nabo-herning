@@ -21,7 +21,6 @@ export default function Menu({
 }: MenuProps) {
   const [open, setOpen] = useState(false);
   const { asPath } = useRouter();
-
   const toggleMenu = () => {
     setOpen(!open);
   };
@@ -40,7 +39,7 @@ export default function Menu({
             <a className={`${styles.logo} logo`}>
               {" "}
               <img src="/page-images/logo.png" alt="Logo" />
-              <p className={styles.logoText}>{pagedata.title}</p>
+              <p className={`${styles.logoText}`}>{pagedata.title}</p>
             </a>
           </Link>
 

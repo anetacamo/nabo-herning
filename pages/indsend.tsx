@@ -157,8 +157,8 @@ const NewMember = ({ blogs }: NewMemberProps) => {
             <button
               type="submit"
               disabled={!formReady}
-              className={`${styles.submit} ${formSent && "greenlight"} ${
-                formReady ? "button-greenlight" : "button-green"
+              className={`${styles.submit} ${formSent && "green"} ${
+                formReady ? "button-green" : "button-red"
               }`}
             >
               <span className="flex-center-hor">
@@ -173,7 +173,7 @@ const NewMember = ({ blogs }: NewMemberProps) => {
 
           <div style={{ marginTop: "-1rem" }}>
             {!formReady && (
-              <div className="green flex-center-hor">
+              <div className="red flex-center-hor">
                 <FontAwesomeIcon icon={faClose} className={styles.icon} />
                 <p>{pagedata.required_fields_message}</p>
               </div>
