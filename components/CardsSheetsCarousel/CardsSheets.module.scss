@@ -2,6 +2,7 @@
 @import "../../styles/variables.scss";
 
 $card-border: 6px;
+$padding: 1rem;
 
 .container {
   align-items: unset;
@@ -20,8 +21,8 @@ $card-border: 6px;
     color: white;
   }
   margin: $card-border;
-  padding: 1.25rem;
-  min-width: 15rem;
+  padding: $padding;
+  min-width: 8rem;
   max-width: 20rem;
   position: relative;
   flex: 1;
@@ -41,7 +42,7 @@ $card-border: 6px;
 }
 .image {
   text-align: center;
-  margin: -1.25rem;
+  margin: -$padding;
   position: relative;
   height: 10rem;
   border-top-left-radius: 14px;
@@ -49,6 +50,7 @@ $card-border: 6px;
   overflow: hidden;
   @media (max-width: 700px) {
     margin: -1rem;
+    height: 6rem;
   }
 }
 .special {
@@ -58,8 +60,7 @@ $card-border: 6px;
 .type {
   @include type;
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  margin-left: -6px;
+  margin-top: 0.25rem;
   position: relative;
   @media (max-width: 700px) {
     margin-left: -2px;
@@ -82,4 +83,11 @@ $card-border: 6px;
     transition-duration: 350ms;
     cursor: pointer;
   }
+}
+
+.left {
+  margin-left: 6px;
+}
+.right {
+  margin-right: 6px;
 }

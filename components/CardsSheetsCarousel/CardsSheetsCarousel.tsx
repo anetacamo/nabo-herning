@@ -12,7 +12,7 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
   const slides = members.members;
   const slidesLength = members.members?.length;
   const [slide, setSlide] = useState<number>(0);
-  const displayedItems = 5;
+  const displayedItems = 4;
 
   const showItems = () => {
     const items = [];
@@ -43,7 +43,7 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
     <div className={`flex-center ${styles.container}`}>
       <FontAwesomeIcon
         icon={faArrowLeft}
-        className={`${styles.icon}`}
+        className={`${styles.icon} ${styles.left}`}
         onClick={moveLeft}
         // onClick={() => setSlide(slide - 1)}
         // onKeyDown={(event) => {
@@ -93,7 +93,7 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
       </div>
       <FontAwesomeIcon
         icon={faArrowRight}
-        className={`${styles.icon} `}
+        className={`${styles.icon} ${styles.right}`}
         onClick={moveRight}
       />
     </div>

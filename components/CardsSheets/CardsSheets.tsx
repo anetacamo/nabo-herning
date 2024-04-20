@@ -28,7 +28,7 @@ export default function CardsSheets(members: { members: Blog[] }) {
             <div
               className={`${styles.image} border-bottom-${getColor(post.type)}`}
             >
-              {post.image ? (
+              {post.imaage ? (
                 <img
                   src={post.image}
                   alt={post?.title}

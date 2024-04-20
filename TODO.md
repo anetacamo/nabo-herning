@@ -30,3 +30,11 @@
 - add filters to be read from the slug
 - fixed wrong color names
 - added a fallback image
+
+creating new repository on github, connecting the sheets, mapbox, adding vercel hosting 3h
+feature: added fallback picture when image is not rendering 1.5h
+adding the images inside the project 1.5h
+feature: added carousel and filters. 4h
+customizing the map: including the new colors for the project, deleting specific sections made for aarhus, removing unused code, adding the text background on hp 3h
+formatting data sheet texts (removing duplicated tags, adding instructions, formatting the lartitude and altitude and fixing the problem of multiple drops on one page) + testing 2h
+calls, communication, documentation and time tracking, mails and checkins 4h
