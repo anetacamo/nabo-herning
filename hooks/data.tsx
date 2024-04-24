@@ -5,7 +5,6 @@ let cachedData: Blog[] | null = null;
 
 export async function fetchGoogleSheetData(): Promise<Blog[]> {
   if (cachedData) {
-    console.log("cached");
     return cachedData;
   }
 

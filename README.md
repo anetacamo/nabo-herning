@@ -60,7 +60,6 @@ function onEdit(e) {
     ss.getSpreadsheetTimeZone(),
     "d/M/yy"
   );
-  console.log(timestamp);
   sheet.getRange(2, 14).setValue(timestamp);
 }
 ```

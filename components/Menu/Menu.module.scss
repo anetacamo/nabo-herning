@@ -22,11 +22,13 @@
   }
 
   &.open {
-    background-color: purple;
-    background-image: url(../../public/bgs/bg2.png);
-    background-size: contain;
+    background-color: white;
+    //background-image: url(../../public/images/aa-map.png);
+    background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
+    z-index: 6;
+    position: fixed;
     height: 100vh;
     transition-duration: 350ms;
     .desktop {

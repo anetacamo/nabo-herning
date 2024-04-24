@@ -6,7 +6,8 @@ import styles from "./MapGl.module.scss";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
-import pagedata from "../../texts/home.json";
+import { getCategoryIcon } from "../../utils/getCategoryIcon";
+import { organizePosts } from "../../utils/organizePosts";
 
 interface MapGlProps {
   posts: Blog[];
@@ -14,11 +15,14 @@ interface MapGlProps {
 
 export default function MapGl({ posts }: MapGlProps) {
   const [name, setName] = useState("");
+  const [item, setItem] = useState(null);
   const [viewState, setViewState] = useState({
     latitude: 56.03550959531433,
     longitude: 12.582182444184792,
     zoom: 11,
   });
+
+  organizePosts(posts);
 
   return (
     <div className={`${styles.mapwhole} desktop`}>
@@ -59,44 +63,82 @@ export default function MapGl({ posts }: MapGlProps) {
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
       >
         <NavigationControl />
-        {posts.map(
-          (post: Blog, index: number) =>
-            !isNaN(post.longitude || 0) &&
-            !isNaN(post.latitude || 0) && (
+        {organizePosts(posts).map(
+          (post, index: number) =>
+            !isNaN(post.posts[0].longitude || 0) &&
+            !isNaN(post.posts[0].latitude || 0) && (
               <Marker
                 key={index}
-                latitude={post.latitude}
-                longitude={post.longitude}
-                style={name === post.title ? { zIndex: 5 } : { zIndex: 1 }}
+                latitude={post.posts[0].latitude}
+                longitude={post.posts[0].longitude}
+                style={item === index ? { zIndex: 5 } : { zIndex: 1 }}
               >
                 <Link
-                  href={`cards/${slugify(post?.title)}`}
+                  href={`cards/${slugify(post?.posts[0].title)}`}
                   key={index}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <div
-                    className={`${styles.point} bg-${getColor(post.type)} ${
-                      name === post.title ? styles.pointed : ""
-                    }`}
-                    onMouseEnter={() => setName(post.title)}
-                    onMouseLeave={() => setName("")}
+                    className={`${styles.point} bg-${getColor(
+                      post.posts[0].type
+                    )} ${item === index ? styles.pointed : ""}`}
+                    onMouseEnter={() => setItem(index)}
+                    onMouseLeave={() => setItem(null)}
                   >
+                    {post.children > 1 && (
+                      <div className={`${styles.number} bg-red`}>
+                        {post.children}
+                      </div>
+                    )}
                     <img
-                      src={`/categories/${getColor(post.type)}2.png`}
+                      src={`/images/icons/${getCategoryIcon(
+                        post.posts[0].type
+                      )}.png`}
                       alt={`icon`}
                       className={styles.icon}
                     />
+
+                    {/* <div>
+                      {post.posts.map((child, childindex) => (
+                        <div
+                          className={`${styles.title} ${getColor(child.type)} ${
+                            item === index && styles.opened
+                          }`}
+                        >
+                          {child.title}
+                          {childindex === post.posts.length - && (
+                            <span style={{ color: "black" }}>
+                              {" "}
+                              {child.address}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div> */}
                     <div
-                      className={`${styles.title} ${getColor(post.type)} ${
-                        name === post.title ? styles.opened : ""
+                      className={`${styles.title} ${
+                        item === index && styles.opened
                       }`}
                     >
-                      {name === post.title ? name : ""}
-                      <span style={{ color: "black" }}>
-                        {" "}
-                        {name === post.title ? post.address : ""}
-                      </span>
+                      {item === index &&
+                        post.posts.map((child, childindex) => (
+                          <p
+                            className={`${getColor(child.type)} ${styles.main}`}
+                            key={childindex}
+                            style={{
+                              marginBottom: post.posts.length > 1 ? null : 0,
+                            }}
+                          >
+                            {child.title}
+                          </p>
+                        ))}
+                      {item === index && (
+                        <span style={{ color: "black" }}>
+                          {" "}
+                          {post.posts[0].address}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </Link>

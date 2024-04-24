@@ -38,7 +38,7 @@ export default function Menu({
           <Link href="/">
             <a className={`${styles.logo} logo`}>
               {" "}
-              <img src="/page-images/logo.png" alt="Logo" />
+              <img src="/images/logo/logo.png" alt="Logo" />
               <p className={`${styles.logoText}`}>{pagedata.title}</p>
             </a>
           </Link>
