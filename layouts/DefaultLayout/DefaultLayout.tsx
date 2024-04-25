@@ -55,8 +55,8 @@ export const DefaultLayout = ({
         <meta
           name="twitter:image"
           content={`https://www.kultur-kortet.dk/images/${
-            image ? image : "aa-map"
-          }.jpg`}
+            image ? `places/${image}.jpg` : "aa-map.png"
+          }`}
         />{" "}
         <meta property="og:title" content={`${title} | Kultur Kortet Århus`} />
         <meta
@@ -69,9 +69,9 @@ export const DefaultLayout = ({
         <meta
           property="og:image"
           content={`https://www.kultur-kortet.dk/images/${
-            image ? image : "aa-map"
-          }.jpg`}
-        />{" "}
+            image ? `places/${image}.jpg` : "aa-map.png"
+          }`}
+        />
         {/* URL to an image for sharing */}
         <meta property="og:url" content="https://www.kultur-kortet.dk/" />
         <meta property="og:type" content="website" />

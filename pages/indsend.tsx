@@ -18,6 +18,7 @@ import CardType, {
 
 import styles from "./NewMember/NewMember.module.scss";
 import { fetchGoogleSheetData } from "../hooks/data";
+import FormTagsList from "../components/FormTagsList/FormTagsList";
 
 export async function getStaticProps() {
   const blogs = await fetchGoogleSheetData();
@@ -111,6 +112,22 @@ const NewMember = ({ blogs }: NewMemberProps) => {
             memberType={member.type}
             onMemberSet={(type) => setMember({ ...member, type: type })}
           />
+          {member.type && (
+            <FormTagsList
+              posts={blogs.filter((blog: Blog) =>
+                blog.type?.toLowerCase().includes(member.type)
+              )}
+              // onTagClick={onTagSet}
+              onTagClick={(membertag) =>
+                setMember({
+                  ...member,
+                  tags: `...${member.tags}, ${membertag}`,
+                })
+              }
+              tags={member.tags}
+              category={member.type}
+            />
+          )}
 
           {pagedata.multiselects.map((item, index: number) => (
             <FormTag

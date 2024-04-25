@@ -1,5 +1,5 @@
 import styles from "./CardsSheets.module.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
@@ -12,7 +12,21 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
   const slides = members.members;
   const slidesLength = members.members?.length;
   const [slide, setSlide] = useState<number>(0);
-  const displayedItems = 4;
+  const [displayedItems, setDisplayedItem] = useState<number>(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      console.log("resize!!!", window.innerWidth / 300);
+      setDisplayedItem(Math.floor(window.innerWidth / 300));
+      console.log(displayedItems);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const showItems = () => {
     const items = [];
@@ -40,62 +54,73 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
   };
 
   return (
-    <div className={`flex-center ${styles.container}`}>
-      <FontAwesomeIcon
-        icon={faArrowLeft}
-        className={`${styles.icon} ${styles.left}`}
-        onClick={moveLeft}
-        // onClick={() => setSlide(slide - 1)}
-        // onKeyDown={(event) => {
-        //   if (event.key === "ArrowLeft" || event.key === " ") {
-        //     () => setSlide(slide === 0 ? slides : slides - 1);
-        //   }
-        // }}
-        // role="button"
-        // tabIndex="0"
-      />
+    <>
+      <h4 style={{ marginTop: -16 }}>
+        showing {slide + 1} - {slide + displayedItems} out of {slidesLength}
+      </h4>
       <div className={`flex-center ${styles.container}`}>
-        {showItems().map((post: Blog, index: number) => (
-          <Link href={`/cards/${slugify(post.title)}`} key={index}>
-            <a
-              className={`${styles.link} border-black bg-hover-${getColor(
-                post.type
-              )}`}
-            >
-              <div className={`${styles.image} border-bottom-black`}>
-                {post.image ? (
-                  <img
-                    src={post.image}
-                    alt={post?.title}
-                    className={styles.image}
-                  />
-                ) : (
-                  <ImageWithFallBack
-                    src={`/images/${slugify(post?.title)}.jpg`}
-                    alt={post?.title}
-                  />
-                )}
-              </div>
+        <FontAwesomeIcon
+          icon={faArrowLeft}
+          className={`${styles.icon} ${styles.left}`}
+          onClick={moveLeft}
+          onKeyDown={moveLeft}
+          // onClick={() => setSlide(slide - 1)}
+          // onKeyDown={(event) => {
+          //   if (event.key === "ArrowLeft" || event.key === " ") {
+          //     () => setSlide(slide === 0 ? slides : slides - 1);
+          //   }
+          // }}
+          role="button"
+          tabIndex={0}
+        />
+        <div className={`flex-center ${styles.container}`}>
+          {showItems().map((post: Blog, index: number) => (
+            <Link href={`/cards/${slugify(post.title)}`} key={index}>
+              <a
+                className={`${styles.link} border-black bg-hover-${getColor(
+                  post.type
+                )}`}
+              >
+                <div className={`${styles.image} border-bottom-black`}>
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post?.title}
+                      className={styles.image}
+                    />
+                  ) : (
+                    <ImageWithFallBack
+                      src={`/images/places/${slugify(post?.title)}.jpg`}
+                      alt={post?.title}
+                    />
+                  )}
+                </div>
 
-              {post?.type && (
-                <p
-                  className={`${styles.type} border-black
+                {post?.type && (
+                  <p
+                    className={`${styles.type} border-black
                     )} ${getColor(post.type)} bg-black`}
-                >
-                  {post?.supertag && post.supertag}{" "}
-                  {post?.type.split(",")[0].trim()}
-                </p>
-              )}
-              {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
-            </a>
-          </Link>
-        ))}
+                  >
+                    {post?.supertag && post.supertag}{" "}
+                    {post?.type.split(",")[0].trim()}
+                  </p>
+                )}
+                {post?.title && (
+                  <h4 className={styles.special}>{post?.title}</h4>
+                )}
+              </a>
+            </Link>
+          ))}
+        </div>
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          className={`${styles.icon} ${styles.right}`}
+          onClick={moveRight}
+          onKeyDown={moveRight}
+          role="button"
+          tabIndex={0}
+        />
       </div>
-      <FontAwesomeIcon
-        icon={faArrowRight}
-        className={`${styles.icon} ${styles.right}`}
-        onClick={moveRight}
-      />
-    </div>
+    </>
   );
 }

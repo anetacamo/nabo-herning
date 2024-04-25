@@ -36,7 +36,7 @@ export default function CardsSheets(members: { members: Blog[] }) {
                 />
               ) : (
                 <ImageWithFallBack
-                  src={`/images/${slugify(post?.title)}.jpg`}
+                  src={`/images/places/${slugify(post?.title)}.jpg`}
                   alt={post?.title}
                 />
               )}

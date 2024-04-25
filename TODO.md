@@ -19,6 +19,7 @@ BACKLOG
 - bug: about pages margins
 - bug: single pages mobile image
 - bug: carousel showing images same time
+- share the repo with people
 
 ### DONE
 
@@ -28,6 +29,9 @@ BACKLOG
 - added a fallback image
 - made the map texts look nicer
 - fixed huamburger menu bg
+- images missing repaired
+- carousel fixed
+- added tags to form
 
 MIGRATION RELATED
 

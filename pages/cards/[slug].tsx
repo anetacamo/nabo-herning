@@ -57,7 +57,7 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
       image={slugify(blog?.title)}
       keywords={blog?.invisible}
     >
-      <CrookedImage image={`/images/${slugify(blog?.title)}.jpg`}>
+      <CrookedImage image={`/images/places/${slugify(blog?.title)}.jpg`}>
         <div className={styles.text}>
           <p className={`${getColor(blog?.type)}`}>
             {blog?.supertag} {blog?.type}

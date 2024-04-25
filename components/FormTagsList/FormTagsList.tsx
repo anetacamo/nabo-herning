@@ -1,4 +1,4 @@
-import styles from "./TagsList.module.scss";
+import styles from "./FormTagsList.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import Blog from "../../types/card.type";
@@ -8,14 +8,16 @@ interface TagsProps {
   posts: Blog[];
   onTagClick: (t: string) => void;
   tag: string;
+  tags: any;
   category?: string;
 }
 
-export default function TagsList({
+export default function FormTagsList({
   posts,
   onTagClick,
   tag,
   category,
+  tags,
 }: TagsProps) {
   const allTags: string[] | undefined = [];
   posts.map((item) => {
@@ -28,9 +30,9 @@ export default function TagsList({
       {allTags.map((t, index) => (
         <div
           key={index}
-          className={`type ${tag == t && "bg-chosen"} ${
+          className={`type ${tag == t && "bg- chosen"} ${
             styles.tag
-          } bg-${getColor(category)} border-${getColor(category)}`}
+          } bg-${getColor(category)} `}
           aria-label={`${t} - ${tag == t ? "checked" : ""}`}
           onClick={() => onTagClick(t)}
           role="button"
