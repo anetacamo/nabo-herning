@@ -6,7 +6,7 @@
   "meta-keywords": "",
   "sections": [
     {
-      "title": "Kender du til noget der skal med på kortet?",
+      "title": "Kender du til noget der skal med på kortet",
       "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.frontloberne.dk'>Frontløberne</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne <br/><br/><i>Kortet var sidst opdateret April 20, 2024</i>",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "left",
@@ -26,14 +26,6 @@
       "text": "Kultur-Kortet er udviklet af Aneta Camo, og designet af Aneta Camo og Liam Nilsen. Tusind tak til Aneta, for dit arbejde på projektet! Koden bag Kultur-Kortet er open source og tilgængelig. </br></br>Hvis du vil have et Kultur-Kort i din by, så kan du finde <a href='https://github.com/anetacamo/nabo'>koden på GitHub</a>. </br>Set det op selv, eller <a href='https://anetacamo.github.io/'>få hjælp fra Aneta</a>.",
       "orientation": "right",
       "background": "black"
-    },
-
-    {
-      "title": "Muliggjort af Erasmus+",
-      "image": "/public/page-images/logo/DA_FundedbytheEU_RGB_BLACK.png",
-      "text": "Kultur-Kortet er udviklet som en del af Nåbø projektet 2022-2023. Nåbø projektet er et samarbejde mellem Frontløberne i Aarhus, og Tvibit i Tromsø, som skaber ressourcer til unge kulturskabere i de to byer. Tusind tak til Erasmus+ og Den Europæiske Union for deres støtte til Nåbø projektet, herunder Kultur-Kortet. Finansieret af Den Europæiske Union. Synspunkter og holdninger, der kommer til udtryk, er udelukkende forfatterens/forfatternes og er ikke nøvendigvis udtryk for Den Europæiske Unions eller Det Europæiske Forvaltningsorgan for Uddannelse og Kulturs (EACEA) officielle holdning. Hverken den Europæiske Union eller EACEA kan holdes ansvarlig herfor.",
-      "orientation": "left",
-      "background": "blue"
     },
 
     {
