@@ -59,8 +59,8 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
     >
       <CrookedImage image={`/images/places/${slugify(blog?.title)}.jpg`}>
         <div className={styles.text}>
-          <p className={`${getColor(blog?.type)}`}>
-            {blog?.supertag} {blog?.type}
+          <p className={`${getColor(blog?.type)} ${styles.tag}`}>
+            {blog?.type}
           </p>
           <h1>{blog?.title}</h1>
           {blog?.address && (
@@ -69,8 +69,8 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
           {blog?.link && (
             <IconHolder name={texts.link} link={blog?.link} small />
           )}
-          {blog?.invisible && (
-            <Tags tags={blog?.invisible} color={getColor(blog?.type)} />
+          {blog?.tags && (
+            <Tags tags={blog?.tags} color={getColor(blog?.type)} />
           )}
         </div>
       </CrookedImage>

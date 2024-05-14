@@ -5,14 +5,26 @@ $letter-spacing-l: 2px;
 $border-width: 2px;
 $border-mobile: 1.5px;
 
+$border-radius-l: 6px;
+$border-radius-m: 4px;
+$border-radius-s: 2px;
+
+$section-padding-l: 4rem 2rem;
 $section-padding: 4rem 2rem;
+$section-padding-m: 3rem 1.5rem;
 $section-padding-mobile: 3rem 1.5rem;
+$section-padding-s: 2rem 1rem;
 
 $phone: 400px;
 $tablet: 700px;
 
 $tag-margin: 4px;
-$tag-padding: 3px 6px 2px;
+$tag-margin-m: 0.25rem;
+$tag-margin-s: 0.125rem;
+
+$tag-padding-l: 5px 8px 4px;
+$tag-padding-m: 3px 6px 2px;
+$tag-padding-s: 1px 4px 0px;
 
 $font-size-10: 10px;
 $font-size-12: 12px;
@@ -26,11 +38,11 @@ $font-size-40: 40px;
 
 @mixin border {
   border-width: $border-width;
-  border-radius: 6px;
+  border-radius: $border-radius-l;
   border-style: solid;
   @media (max-width: $phone) {
     border-width: $border-mobile;
-    border-radius: 4px;
+    border-radius: $border-radius-m;
   }
 }
 
@@ -44,12 +56,12 @@ $font-size-40: 40px;
   }
 }
 @mixin section {
-  padding: 4rem 2rem;
+  padding: $section-padding;
   @media (max-width: $tablet) {
     padding: 3rem 1.5rem;
   }
   @media (max-width: $phone) {
-    padding: 2rem 1rem;
+    padding: $section-padding-s;
   }
 }
 @mixin tag-padding {
@@ -66,14 +78,51 @@ $font-size-40: 40px;
 }
 
 @mixin type {
-  font-size: 10px;
+  font-size: $font-size-12;
   text-transform: uppercase;
   display: inline-block;
-  padding: $tag-padding;
   letter-spacing: $letter-spacing-m;
+  padding: $tag-padding-l;
+  border-radius: $border-radius-m;
   @include border;
+  margin: $tag-margin-m;
   @media (max-width: $phone) {
-    margin-left: 0.125rem;
-    margin-bottom: 0.125rem;
+    margin: $tag-margin-s;
   }
+}
+
+@mixin type-m {
+  font-size: $font-size-10;
+  padding: $tag-padding-m;
+  border-radius: $border-radius-m;
+  margin: $tag-margin-s;
+}
+
+@mixin type-s {
+  font-size: $font-size-10;
+  padding: $tag-padding-s;
+  border-radius: $border-radius-s;
+  margin: $tag-margin-s;
+}
+
+.type-container {
+  margin: -$tag-margin-s;
+}
+
+.type {
+  @include type;
+  &:hover {
+    transition-duration: 350ms;
+    cursor: pointer;
+  }
+}
+
+.type-s {
+  @include type;
+  @include type-s;
+}
+
+.type-m {
+  @include type;
+  @include type-m;
 }

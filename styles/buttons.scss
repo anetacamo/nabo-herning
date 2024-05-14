@@ -41,7 +41,7 @@ textarea {
 select {
   font-family: "Violet Sans";
   padding: 0.25rem 0.5rem;
-  letter-spacing: 1.2px;
+  letter-spacing: $letter-spacing-m;
 }
 
 input,
@@ -51,7 +51,7 @@ textarea {
   font-family: "Violet Sans";
   width: 100%;
   max-width: 100%;
-  letter-spacing: 1.2px;
+  letter-spacing: $letter-spacing-m;
   color: black;
   outline: none;
   text-transform: none;

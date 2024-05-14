@@ -41,7 +41,11 @@ MIGRATION RELATED
 - adding all the images inside the project and testing them 2h
 - updated section colors and style/small design adjustments specific for the project 2h
 - calls, communication, documentation and time tracking, mails and checkins 4h
+- mail with instructions after the call + the call (2h)
 - easy way to choose colors, icons for the categories. (2h)
+- remove supertag, and hidden tags + organize the form better + billede credit after billede(4h)
+- feature: made footer simpler to edit (1h)
+- google sheets: rewritten the sheets + add two scripts to the google sheets (submit form + display version) and update sheets, colors for optional and necessary items (3h)
 
 NEW UPDATES FOR THE MAP PROJECT
 
@@ -54,8 +58,6 @@ NEW UPDATES FOR THE MAP PROJECT
 WHAT STILL NEED TO BE DONE
 
 - optimize data editing, there is a lot of texts to change and I would like to make it simpler. (4h)
-- introduce them how to edit the pages, talk about images, tags and categories. (1h? + 2h? communication later)
 - link to their URL (change DNS servers)
-- google sheets: add two scripts to the google sheets (submit form + display version) and update sheets, colors for optional and necessary items
 
 - important: UPDATE OLD PROJECTS with those updates (2 days)

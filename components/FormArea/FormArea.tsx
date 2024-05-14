@@ -13,6 +13,7 @@ export default function FormArea({
   return (
     <div>
       <FormLabel name={name} label={label} required={required} />
+      {helper && <p className={styles.helper}>{helper}</p>}
       <textarea
         name={name}
         id={name}
@@ -21,7 +22,6 @@ export default function FormArea({
         onChange={onFieldChange}
         className={styles.textArea}
       />
-      {helper && <p className={styles.helper}>{helper}</p>}
     </div>
   );
 }

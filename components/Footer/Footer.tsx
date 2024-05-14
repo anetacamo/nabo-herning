@@ -25,20 +25,14 @@ export default function Footer() {
                 <IconHolder name={line.name} link={line.link} key={index} />
               ))}
 
-            {s.addresses &&
-              s.addresses.map((adress) =>
-                adress.map((line, index: number) => (
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: line,
-                    }}
-                    key={index}
-                    className={`${styles.line} ${
-                      index === 0 && styles.highlighted
-                    }`}
-                  ></p>
-                ))
-              )}
+            {s.lines && (
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: s.lines,
+                }}
+                className={`${styles.line}`}
+              ></p>
+            )}
 
             {s.image && (
               <div className={styles.imageHolder}>

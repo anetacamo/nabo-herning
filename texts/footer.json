@@ -2,22 +2,12 @@
   {
     "title": "Om Kultur Kortet",
     "text": "Kulturkortet er et samlingssted for ressourcer som kulturskabere i Århus kan trække på til at lave kulturprojekter.",
-    "addresses": [
-      ["<a href='/om'>Læs mer her</a>"],
-      ["", "Skabt of vedligeholdt af"]
-    ],
+    "lines": "<a href='/om'>Læs mer her</a><br/><br/>Skabt of vedligeholdt af",
     "image": "/page-images/fl-logo.png"
   },
   {
     "title": "Contact",
-    "addresses": [
-      [
-        "<a href='https://www.frontloberne.dk' rel='noopener noreferrer'  target='_blank' >Frontløberne</a>",
-        "Jægegårdsgade 154c",
-        "Aarhus C",
-        "<a href='mailto:info@frontloberne.dk' rel='noopener noreferrer' target='_blank' >info@frontloberne.dk</a>"
-      ]
-    ]
+    "lines": "<a href='https://www.frontloberne.dk' rel='noopener noreferrer'  target='_blank' >Frontløberne</a><br/>Jægegårdsgade 154c<br/>Aarhus C<br/><a href='mailto:info@frontloberne.dk' rel='noopener noreferrer' target='_blank' >info@frontloberne.dk</a>"
   },
 
   {
@@ -26,22 +16,12 @@
       { "name": "Nabo Tromsø", "link": "www.google.com" },
       { "name": "Nabo Aarhus", "link": "https://www.kultur-kortet.dk" }
     ],
-    "addresses": [
-      [
-        "Skal dit projekt være med på kortet?",
-        "<a href='/indsend'>Indsend</a>"
-      ],
-      [
-        "Skal din by have et kultur-kort?",
-        "<a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a>",
-        "<a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"
-      ]
-    ]
+    "lines": "<br/>Skal dit projekt være med på kortet?<br/><a href='/indsend'>Indsend</a><br/><br/>Skal din by have et kultur-kort?<br/><a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a><br/><a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"
   },
 
   {
     "title": "Sidst opdateret",
-    "addresses": [["<i>April 20, 2024</i>"]],
+    "lines": [["<i>April 20, 2024</i>"]],
     "text": "Kultur-Kortet er opdateret løbende. Tag kontakt, hvis du ser noget gammelt info."
   },
 
@@ -54,13 +34,7 @@
   },
   {
     "title": "credits",
-    "addresses": [
-      [
-        "Code and Design by",
-        "<a href='https://anetacamo.github.io/#/' rel='noopener noreferrer'  target='_blank' >Aneta Camo</a>"
-      ],
-      ["Made possible by", "ERASMUS+ and the European Union"]
-    ],
+    "lines": "Code and Design by<br/><a href='https://anetacamo.github.io/#/' rel='noopener noreferrer'  target='_blank' >Aneta Camo</a><br/><br/>Made possible by<br/> ERASMUS+ and the European Union",
     "image": "/page-images/eu-logo.png"
   }
 ]

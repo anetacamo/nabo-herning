@@ -1,4 +1,4 @@
-import Button from './button.type';
+import Button from "./button.type";
 
 type SectionType = {
   title?: string;

@@ -1,15 +1,6 @@
 @import "../../styles/variables.scss";
 
-.type {
-  @include type;
-  margin: 0;
-  margin-right: 6px;
-  margin-top: 2px !important;
-  margin-bottom: 6px;
-  padding: 1px 4px 0px;
-  border-radius: 3px;
-}
-
 .container {
+  @extend .type-container;
   margin-top: 16px;
 }

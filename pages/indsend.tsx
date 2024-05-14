@@ -48,13 +48,13 @@ const NewMember = ({ blogs }: NewMemberProps) => {
     if (
       member.title !== "" &&
       member.description !== "" &&
-      member.type !== ""
+      member.category !== ""
     ) {
       setFormReady(true);
     } else {
       setFormReady(false);
     }
-  }, [member.title, member.description, member.type]);
+  }, [member.title, member.description, member.category]);
 
   return (
     <DefaultLayout
@@ -70,30 +70,32 @@ const NewMember = ({ blogs }: NewMemberProps) => {
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>
 
-          {pagedata.inputs.map((item, index: number) => (
-            <FormItem
-              key={index}
-              name={item.name as Inputs}
-              required={item.required}
-              label={item.label}
-              helper={item.helper}
-              value={member[item.name as Inputs] || ""}
-              onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setMember({ ...member, [item.name as Inputs]: e.target.value })
-              }
-            />
-          ))}
-
           <FormItem
-            name="email"
-            value={spam}
-            error={spam != ""}
-            success={spam === ""}
+            name={pagedata.inputs[0].name as Inputs}
+            required={pagedata.inputs[0].required}
+            label={pagedata.inputs[0].label}
+            helper={pagedata.inputs[0].helper}
+            value={member[pagedata.inputs[0].name as Inputs] || ""}
             onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setSpam(e.target.value)
+              setMember({
+                ...member,
+                [pagedata.inputs[0].name as Inputs]: e.target.value,
+              })
             }
           />
-
+          <FormItem
+            name={pagedata.inputs[1].name as Inputs}
+            required={pagedata.inputs[1].required}
+            label={pagedata.inputs[1].label}
+            helper={pagedata.inputs[1].helper}
+            value={member[pagedata.inputs[1].name as Inputs] || ""}
+            onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setMember({
+                ...member,
+                [pagedata.inputs[1].name as Inputs]: e.target.value,
+              })
+            }
+          />
           {pagedata.selects.map((item, index: number) => (
             <FormSelect
               key={index}
@@ -101,34 +103,39 @@ const NewMember = ({ blogs }: NewMemberProps) => {
               required={item.required}
               label={item.label}
               helper={item.helper}
-              chosen={member.type}
+              chosen={member.category}
               onFieldChange={(e) =>
                 setMember({ ...member, [item.name]: e.target.value })
               }
             />
           ))}
-
           <FormTypes
-            memberType={member.type}
-            onMemberSet={(type) => setMember({ ...member, type: type })}
+            memberType={member.category}
+            onMemberSet={(type) => setMember({ ...member, category: type })}
           />
-          {member.type && (
-            <FormTagsList
-              posts={blogs.filter((blog: Blog) =>
-                blog.type?.toLowerCase().includes(member.type)
-              )}
-              // onTagClick={onTagSet}
-              onTagClick={(membertag) =>
-                setMember({
-                  ...member,
-                  tags: `...${member.tags}, ${membertag}`,
-                })
-              }
-              tags={member.tags}
-              category={member.type}
-            />
-          )}
 
+          {member.category && (
+            <>
+              <p style={{ marginBottom: -28, fontSize: 12 }}>
+                tags for existing category. Click to add to visible tags if any
+                of them fits
+              </p>
+              <FormTagsList
+                posts={blogs.filter((blog: Blog) =>
+                  blog.type?.toLowerCase().includes(member.category)
+                )}
+                // onTagClick={onTagSet}
+                onTagClick={(membertag) =>
+                  setMember({
+                    ...member,
+                    tags: `...${member.tags}, ${membertag}`,
+                  })
+                }
+                tags={member.tags}
+                category={member.category}
+              />
+            </>
+          )}
           {pagedata.multiselects.map((item, index: number) => (
             <FormTag
               key={index}
@@ -156,11 +163,33 @@ const NewMember = ({ blogs }: NewMemberProps) => {
               blogs={blogs}
             />
           ))}
-
+          {pagedata.inputs.slice(2).map((item, index: number) => (
+            <FormItem
+              key={index}
+              name={item.name as Inputs}
+              required={item.required}
+              label={item.label}
+              helper={item.helper}
+              value={member[item.name as Inputs] || ""}
+              onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setMember({ ...member, [item.name as Inputs]: e.target.value })
+              }
+            />
+          ))}
+          <FormItem
+            name="email"
+            value={spam}
+            error={spam != ""}
+            success={spam === ""}
+            onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setSpam(e.target.value)
+            }
+          />
           {pagedata.textAreas.map((item, index: number) => (
             <FormArea
               key={index}
               name={item.name as TextAreas}
+              helper={item.helper}
               required={item.required}
               label={item.label}
               value={member[item.name as TextAreas] || ""}
@@ -169,7 +198,6 @@ const NewMember = ({ blogs }: NewMemberProps) => {
               }
             />
           ))}
-
           <div>
             <button
               type="submit"
@@ -187,7 +215,6 @@ const NewMember = ({ blogs }: NewMemberProps) => {
               </span>
             </button>
           </div>
-
           <div style={{ marginTop: "-1rem" }}>
             {!formReady && (
               <div className="red flex-center-hor">

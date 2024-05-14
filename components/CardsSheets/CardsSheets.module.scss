@@ -55,7 +55,7 @@ $card-border: 6px;
   margin-top: 0.5rem !important;
 }
 .type {
-  @include type;
+  @include type-m;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   margin-left: -6px;

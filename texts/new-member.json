@@ -1,24 +1,31 @@
 {
   "title": "Tilføj ny ressource",
   "description": "Står du for, eller kender du til en ressource, du synes skal være på kortet? Udfyld formularen, så vender vi tilbage til dig eller poster dig direkte i kortet.",
-  "meta": "this short text is optional if above description is short enough. should be no longer then 155 characters long. usd for google seacg results",
+  "meta": "Står du for, eller kender du til en ressource, du synes skal være på kortet? Udfyld formularen, så vender vi tilbage til dig eller poster dig direkte i kortet.",
   "helper": "Bemærk, at ved at trykke på ovenstående knap vil indsendte data blive gennemgået og udelukkende brugt til offentlig visning på denne side. Vær derfor advaret om ikke at dele nogen form for følsomme oplysninger. Giv os venligst besked, hvis du ønsker, at dine data skal slettes eller ændres via info@frontloberne.dk",
   "submit_button": "submit form",
   "required_fields_message": "Fields with star are required. Please fill those.",
-  "form_submitted_message": "Succes! your entry was submitted.",
+  "form_submitted_message": "Succes! your entry was submitted. Thank you!",
+
+  "selects": [
+    {
+      "label": "Category",
+      "name": "category",
+      "required": true
+    }
+  ],
+  "multiselects": [
+    {
+      "label": "Visible Tags",
+      "name": "tags",
+      "helper": "Visible tags skal være omkring tre, ikke mere end fem. Brug dem så beskrivende som muligt. De kan søges og vises for at hjælpe med at give kontekst og specifik information. <br/><i>To keep it consistent you can click any of the recommanded tags above.<br/> Or look through the dropdown with existing tags if you find a match.<br/>Otherwise write down your tag on the next line and click add.</i>"
+    }
+  ],
   "inputs": [
     {
       "label": "Navn på ressource",
       "name": "title",
       "required": true
-    },
-    {
-      "label": "Supertag",
-      "name": "supertag"
-    },
-    {
-      "label": "Billede credit",
-      "name": "credit"
     },
     {
       "label": "Hjemmeside",
@@ -29,10 +36,6 @@
       "name": "address"
     },
     {
-      "label": "URL til billede",
-      "name": "image"
-    },
-    {
       "label": "Latitude",
       "name": "latitude",
       "helper": "to get longitude and latitude find yourself at any map app, right click and fill in the coordinates here. center of our map: latitude: 56.1573840, longitude:10.2007413"
@@ -40,28 +43,13 @@
     {
       "label": "Longitude",
       "name": "longitude"
+    },
+    {
+      "label": "URL til billede",
+      "name": "image"
     }
   ],
 
-  "selects": [
-    {
-      "label": "Type",
-      "name": "type",
-      "required": true
-    }
-  ],
-  "multiselects": [
-    {
-      "label": "Visible Tags",
-      "name": "tags",
-      "helper": "Visible tags skal være omkring tre, ikke mere end fem. Brug dem så beskrivende som muligt. De kan søges og vises for at hjælpe med at give kontekst og specifik information."
-    },
-    {
-      "label": "Hidden Tags",
-      "name": "invisible",
-      "helper": "Disse tags vil ikke være synlige nogen steder, men de vil komme frem i søgeresultater. Prøv at begrænse dem til 5."
-    }
-  ],
   "textAreas": [
     {
       "label": "Om ressourcen",
@@ -70,6 +58,7 @@
     },
     {
       "label": "Hvordan kan man bruge denne ressource?",
+      "helper": "Practical information for potential visitors. opening hours, costs, how does it work, what can you do there and on what terms?",
       "name": "howtouse"
     }
   ],
