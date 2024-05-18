@@ -46,9 +46,6 @@ export default function MapGl({ posts }: MapGlProps) {
             <span className={`${styles.highlighted} bg-blue`}>
               fælleskaber, og andre ressourcer
             </span>{" "}
-            <span className={`${styles.highlighted} bg-blue`}>
-              i det Aarhusianske kulturmiljø.
-            </span>
           </p>
         </div>
       </div>
@@ -81,7 +78,7 @@ export default function MapGl({ posts }: MapGlProps) {
                 >
                   <div
                     className={`${styles.point} bg-${getColor(
-                      post.posts[0].type
+                      post.posts[0].category
                     )} ${item === index ? styles.pointed : ""}`}
                     onMouseEnter={() => setItem(index)}
                     onMouseLeave={() => setItem(null)}
@@ -93,29 +90,12 @@ export default function MapGl({ posts }: MapGlProps) {
                     )}
                     <img
                       src={`/images/icons/${getCategoryIcon(
-                        post.posts[0].type
+                        post.posts[0].category
                       )}.png`}
                       alt={`icon`}
                       className={styles.icon}
                     />
 
-                    {/* <div>
-                      {post.posts.map((child, childindex) => (
-                        <div
-                          className={`${styles.title} ${getColor(child.type)} ${
-                            item === index && styles.opened
-                          }`}
-                        >
-                          {child.title}
-                          {childindex === post.posts.length - && (
-                            <span style={{ color: "black" }}>
-                              {" "}
-                              {child.address}
-                            </span>
-                          )}
-                        </div>
-                      ))}
-                    </div> */}
                     <div
                       className={`${styles.title} ${
                         item === index && styles.opened
@@ -124,7 +104,9 @@ export default function MapGl({ posts }: MapGlProps) {
                       {item === index &&
                         post.posts.map((child, childindex) => (
                           <p
-                            className={`${getColor(child.type)} ${styles.main}`}
+                            className={`${getColor(child.category)} ${
+                              styles.main
+                            }`}
                             key={childindex}
                             style={{
                               marginBottom: post.posts.length > 1 ? null : 0,

@@ -35,17 +35,22 @@ BACKLOG
 
 MIGRATION RELATED
 
-- creating new repository on github, connecting the sheets, mapbox, adding vercel hosting 4h
-- customizing the project: including the new colors for the project, deleting specific sections made for aarhus, removing unused code, code optimizing, adding the text background on hp and specific style adjustments 4h
-- formatting data sheet texts (removing duplicated tags, adding instructions, formatting the lartitude and altitude) + testing 2h
-- adding all the images inside the project and testing them 2h
-- updated section colors and style/small design adjustments specific for the project 2h
-- calls, communication, documentation and time tracking, mails and checkins 4h
-- mail with instructions after the call + the call (2h)
+- creating new repository on github, connecting the sheets, mapbox, adding vercel hosting (4h)
+- customizing the project: including the new colors for the project, deleting specific sections made for aarhus, removing unused code, code optimizing, adding the text background on hp and specific style adjustments (4h)
+- formatting data sheet texts (removing duplicated tags, adding instructions, formatting the lartitude and altitude) + testing (2h)
+- adding all the images inside the project and testing them (2h)
+- updated section colors and style/small design adjustments specific for the project (2h)
+- calls, communication, documentation and time tracking, mails and checkins (4h)
+- mail with instructions after the call + the call (3h)
 - easy way to choose colors, icons for the categories. (2h)
-- remove supertag, and hidden tags + organize the form better + billede credit after billede(4h)
+- remove supertag, and hidden tags + organize the form + billede credit after billede, renamed invisible tags to keywordds and type to category(2h)
+- form can now be generated from the form.json file (3h)
 - feature: made footer simpler to edit (1h)
-- google sheets: rewritten the sheets + add two scripts to the google sheets (submit form + display version) and update sheets, colors for optional and necessary items (3h)
+- google sheets: rewritten the sheets + add two scripts to the google sheets (submit form + display version) and update sheets, colors for optional and necessary items (4h)
+- map migration finished(1h)
+- Form can now submit data to a new location + testing (1.5h)
+- Last updated displayed on footer (1h)
+- maintainence (2h)
 
 NEW UPDATES FOR THE MAP PROJECT
 

@@ -7,17 +7,28 @@
   "sections": [
     {
       "title": "Kender du til noget der skal med på kortet",
-      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.frontloberne.dk'>Frontløberne</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne <br/><br/><i>Kortet var sidst opdateret April 20, 2024</i>",
+      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.frontloberne.dk'>Frontløberne</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "left",
       "background": "darkblue"
     },
 
     {
+      "title": "Musik",
+      "text": "Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
+      "buttons": [
+        { "name": "musik", "link": "/?tag=musik" },
+        { "name": "fællesskab", "link": "/?tag=fællesskab" }
+      ],
+      "orientation": "right",
+      "background": "greenlight"
+    },
+
+    {
       "title": "Kortets Indhold",
-      "text": "Kultur-Kortet er lavet til kulturskabere i Aarhus. Siden det kan være ret svært at finde ud af hvad de forskellige scener, centre, og aktører laver når man er ny i branchen eller ny til byen, så har vi samlet alt på et sted. <br/><br/>De første 140 tekster var skrevet af Lisa Christiane og Line Kjærgaard Hansen - tusind tak til Line og Lisa! Yderlige tilføjelser er skrevet løbende af Frontløberne, eller af folk der indsender ressourcer via <a href='https://www.kultur-kortet.dk/indsend'>indsend</a>. <br/><br/>Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
+      "text": "Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
       "buttons": [{ "name": "Kontakt", "link": "mailto:info@frontloberne.dk" }],
-      "orientation": "center",
+      "orientation": "left",
       "background": "red"
     },
 
@@ -30,7 +41,7 @@
 
     {
       "title": "Hvorfor de kategorier?",
-      "text": "De ressourcer, vi ønskede at sætte på kortet, er super varierede. De her 8 kategorier er det vi kom frem til. Her kan du læse lidt mer om hver af dem.",
+      "text": "De ressourcer, vi ønskede at sætte på kortet, er super varierede. De her 6 kategorier er det vi kom frem til. Her kan du læse lidt mer om hver af dem.",
       "background": "white",
       "orientation": "center"
     }

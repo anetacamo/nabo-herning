@@ -12,7 +12,6 @@ interface LayoutProps {
   description?: string;
   searchQuery?: string;
   onSearchQueryChange?: (e: string) => void;
-
   darkMode?: boolean;
 }
 
@@ -25,6 +24,7 @@ export const DefaultLayout = ({
   searchQuery,
   onSearchQueryChange,
   darkMode,
+  updated,
 }: LayoutProps) => {
   return (
     <>
@@ -34,7 +34,7 @@ export const DefaultLayout = ({
           name="description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer i det Aarhusianske kulturmiljø."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
           }
         />
         <meta
@@ -49,7 +49,7 @@ export const DefaultLayout = ({
           name="twitter:description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer i det Aarhusianske kulturmiljø."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
           }
         />
         <meta
@@ -63,7 +63,7 @@ export const DefaultLayout = ({
           property="og:description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer i det Aarhusianske kulturmiljø."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
           }
         />
         <meta
@@ -106,7 +106,7 @@ export const DefaultLayout = ({
       >
         {children}
       </div>
-      <Footer />
+      <Footer updated={updated} />
     </>
   );
 };

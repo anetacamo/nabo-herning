@@ -12,22 +12,20 @@ import { fetchGoogleSheetData } from "./../hooks/data";
 import { useRouter } from "next/router";
 
 export async function getStaticProps() {
-  const blogs = await fetchGoogleSheetData();
-
+  const { blogs, updated } = await fetchGoogleSheetData();
   return {
     props: {
       blogs,
+      updated,
     },
   };
 }
 
-export default function Home({ blogs }) {
+export default function Home({ blogs, updated }) {
   const [category, setCategory] = useState<string>("");
   const [tag, setTag] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [entryPerPage, setEntryPerPage] = useState<number>(36);
-
-  //const { blogs } = useGoogleSheetsData();
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
 
   const router = useRouter();
@@ -40,9 +38,10 @@ export default function Home({ blogs }) {
         (blog: Blog) =>
           blog.title?.toLowerCase().includes(searchQuery) ||
           blog.description?.toLowerCase().includes(searchQuery) ||
+          blog.howtouse?.toLowerCase().includes(searchQuery) ||
           blog.invisible?.toLowerCase().includes(searchQuery)
       )
-      .filter((blog: Blog) => blog.type?.toLowerCase().includes(category));
+      .filter((blog: Blog) => blog.category?.toLowerCase().includes(category));
     setFilteredBlogs(filtered);
   }, [category, tag, searchQuery]);
 
@@ -94,6 +93,7 @@ export default function Home({ blogs }) {
 
   return (
     <DefaultLayout
+      updated={updated}
       title={pagedata.title}
       description={pagedata.meta || pagedata.description}
       searchQuery={searchQuery}

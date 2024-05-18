@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Footer.module.scss";
+import moment from "moment";
 
 import IconHolder from "../IconHolder/IconHolder";
 import sections from "../../texts/footer.json";
@@ -11,7 +12,7 @@ import {
   faCreativeCommonsNc,
 } from "@fortawesome/free-brands-svg-icons";
 
-export default function Footer() {
+export default function Footer({ updated }) {
   return (
     <footer className="bg-black">
       <section className={styles.footer}>
@@ -45,6 +46,11 @@ export default function Footer() {
               </div>
             )}
 
+            {s.updated && (
+              <p>
+                <i>{moment(updated, "D/M/YY").format("MMMM D, YYYY")}</i>
+              </p>
+            )}
             {index === sections.length - 1 && (
               <div style={{ marginTop: 24 }}>
                 <FontAwesomeIcon

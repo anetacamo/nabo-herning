@@ -17,10 +17,9 @@ export default function FormTag({
   memberTags,
   onCloseClick,
   blogs,
-  label,
 
-  helper,
-  required,
+  data,
+
   onValueUpdate,
 }: FormTagProps) {
   const allTags: string[] = [];
@@ -37,7 +36,11 @@ export default function FormTag({
   return (
     <>
       <div>
-        <FormLabel name={name} label={label} required={required} />
+        <FormLabel
+          name={name}
+          label={data?.label}
+          required={data?.required || false}
+        />
 
         <select
           name="optionChoice"
@@ -83,10 +86,10 @@ export default function FormTag({
         id={name}
         value={memberTags} // Set the initial value to the text you want to submit
       />
-      {helper && (
+      {data?.helper && (
         <p
           className={styles.helper}
-          dangerouslySetInnerHTML={{ __html: helper }}
+          dangerouslySetInnerHTML={{ __html: data.helper }}
         />
       )}
     </>

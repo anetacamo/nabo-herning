@@ -18,6 +18,5 @@ export function organizePosts(posts) {
       result.push({ children: postsArray.length, posts: postsArray });
     }
   }
-  console.log(result);
   return result;
 }

@@ -21,12 +21,12 @@
 
   {
     "title": "Sidst opdateret",
-    "lines": [["<i>April 20, 2024</i>"]],
+    "updated": true,
     "text": "Kultur-Kortet er opdateret løbende. Tag kontakt, hvis du ser noget gammelt info."
   },
 
   {
-    "title": "REQUEST TAKEDOWN / EDIT",
+    "title": "Request takedown / EDIT",
     "text": "Hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, kontakte os.",
     "bulletlinks": [
       { "name": "info@frontloberne.dk", "link": "mailto:info@frontloberne.dk" }

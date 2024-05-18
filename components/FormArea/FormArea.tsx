@@ -3,21 +3,30 @@ import FormLabel from "../FormLabel/FormLabel";
 import styles from "./FormArea.module.scss";
 
 export default function FormArea({
+  data,
   name,
-  label,
   onFieldChange,
   value,
-  helper,
-  required,
 }: FormTextAreas) {
   return (
     <div>
-      <FormLabel name={name} label={label} required={required} />
-      {helper && <p className={styles.helper}>{helper}</p>}
+      <FormLabel
+        name={name}
+        label={data?.label || ""}
+        required={data?.required || false}
+      />
+      {data?.helper && (
+        <p
+          className={styles.helper}
+          dangerouslySetInnerHTML={{
+            __html: data.helper,
+          }}
+        ></p>
+      )}
       <textarea
         name={name}
         id={name}
-        required={required}
+        required={data?.required || false}
         value={value}
         onChange={onFieldChange}
         className={styles.textArea}

@@ -2,7 +2,7 @@ type CardType = {
   category: string;
   title: string;
   link?: string;
-  // supertag?: string;
+
   image?: string;
   credit?: string;
 
@@ -15,37 +15,42 @@ type CardType = {
 
   description: string;
   howtouse?: string;
+
+  email?: string;
 };
 
 export type Select = "category";
 export type Inputs =
   | "title"
+  | "link"
   | "credit"
   | "image"
-  | "link"
   | "address"
   | "latitude"
   | "longitude"
   | "email";
-export type MultiSelects = "tags" | "invisible";
+export type MultiSelects = "tags";
 export type TextAreas = "description" | "howtouse";
+export type AllTypes = Select | Inputs | MultiSelects | TextAreas;
 
 export const emptyMember = {
   category: "",
-
   title: "",
-  credit: "",
-  image: "",
   link: "",
+
+  image: "",
+  credit: "",
+
   address: "",
   latitude: 0,
   longitude: 0,
 
   tags: "",
-  invisible: "",
 
   description: "",
   howtouse: "",
+
+  email: "",
 };
 
 export default CardType;

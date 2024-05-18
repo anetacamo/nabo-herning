@@ -1,11 +1,12 @@
 @import "../../styles/colors-def.scss";
 @import "../../styles/variables.scss";
 
-$card-border: 6px;
+$card-margin: 6px;
+$card-border-radius: 1rem;
 
 .container {
   align-items: unset;
-  margin: -$card-border;
+  margin: -$card-margin;
 }
 
 .link {
@@ -18,15 +19,19 @@ $card-border: 6px;
   a {
     color: white;
   }
-  margin: $card-border;
+  margin: $card-margin;
   padding: 1.25rem;
-  min-width: 15rem;
-  max-width: 20rem;
+  min-width: 16rem;
+  max-width: 24rem;
   position: relative;
   flex: 1;
+  @media (max-width: 700px) {
+    min-width: 12rem;
+    max-width: 24rem;
+  }
 
   @include border;
-  border-radius: 1rem;
+  border-radius: $card-border-radius;
   @media (max-width: 700px) {
     padding: 1rem;
   }

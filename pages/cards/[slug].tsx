@@ -20,16 +20,13 @@ interface SinglePageProps {
 
 export async function getServerSideProps(context: { params: { slug: any } }) {
   const name = context.params.slug;
-  const parsedBlogs = await fetchGoogleSheetData();
+  const { blogs, updated } = await fetchGoogleSheetData();
 
-  const blog = parsedBlogs.filter(
-    (card: Blog) => slugify(card?.title) === name
-  )[0];
+  const blog = blogs.filter((card: Blog) => slugify(card?.title) === name)[0];
+  const blogType = blog.category?.split(",")[0];
 
-  const blogType = blog.type?.split(",")[0];
-
-  const allRelated = parsedBlogs.filter(
-    (b: Blog) => b.type?.split(",")[0] === blogType
+  const allRelated = blogs.filter(
+    (b: Blog) => b.category?.split(",")[0] === blogType
   );
 
   const relatedBlogs = allRelated;
@@ -38,11 +35,16 @@ export async function getServerSideProps(context: { params: { slug: any } }) {
     props: {
       blog,
       relatedBlogs,
+      updated,
     },
   };
 }
 
-export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
+export default function SinglePage({
+  blog,
+  relatedBlogs,
+  updated,
+}: SinglePageProps) {
   const descriptionWithLineBreaks = blog?.description
     .replace(/\\n/g, "\n")
     .replace(/\\+/g, "");
@@ -56,11 +58,12 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
       description={blog?.description}
       image={slugify(blog?.title)}
       keywords={blog?.invisible}
+      updated={updated}
     >
       <CrookedImage image={`/images/places/${slugify(blog?.title)}.jpg`}>
         <div className={styles.text}>
-          <p className={`${getColor(blog?.type)} ${styles.tag}`}>
-            {blog?.type}
+          <p className={`${getColor(blog?.category)} ${styles.tag}`}>
+            {blog?.category}
           </p>
           <h1>{blog?.title}</h1>
           {blog?.address && (
@@ -70,7 +73,7 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
             <IconHolder name={texts.link} link={blog?.link} small />
           )}
           {blog?.tags && (
-            <Tags tags={blog?.tags} color={getColor(blog?.type)} />
+            <Tags tags={blog?.tags} color={getColor(blog?.category)} />
           )}
         </div>
       </CrookedImage>
@@ -83,10 +86,12 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
         <h4>{texts.howToUse}</h4>
         <p style={{ whiteSpace: "pre-wrap" }}>{howtouseWithLineBreaks}</p>
       </section>
-      <section className={`bg-${getColor(blog?.type)}`}>
+      <section className={`bg-${getColor(blog?.category)}`}>
         <h2>
-          <Link href={`/?category=${blog?.type.split(",")[0].toLowerCase()}`}>
-            {`${texts.other} ${blog?.type.split(",")[0]}`}
+          <Link
+            href={`/?category=${blog?.category.split(",")[0].toLowerCase()}`}
+          >
+            {`${texts.other} ${blog?.category.split(",")[0]}`}
           </Link>
         </h2>
 

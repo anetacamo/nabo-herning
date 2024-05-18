@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMemo, useState } from "react";
 import FormArea from "../components/FormArea/FormArea";
 import FormItem from "../components/FormItem/FormItem";
-import FormSelect from "../components/FormSelect/FormSelect";
+import FormSelectCategory from "../components/FormSelectCategory/FormSelectCategory";
 import FormTag from "../components/FormTag/FormTag";
-import FormTypes from "../components/FormTypes/FormTypes";
 import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/new-member.json";
+import formdata from "../texts/form.json";
+
 import CardType, {
   emptyMember,
   TextAreas,
@@ -18,27 +19,28 @@ import CardType, {
 
 import styles from "./NewMember/NewMember.module.scss";
 import { fetchGoogleSheetData } from "../hooks/data";
-import FormTagsList from "../components/FormTagsList/FormTagsList";
 
 export async function getStaticProps() {
-  const blogs = await fetchGoogleSheetData();
+  const { blogs, updated } = await fetchGoogleSheetData();
 
   return {
     props: {
       blogs,
+      updated,
     },
   };
 }
 
 interface NewMemberProps {
-  blogs: CardType[]; // Assuming you have a Blog type defined
+  blogs: CardType[];
   member: CardType;
   formSent: boolean;
   spam: string;
   formReady: boolean;
+  updated: any;
 }
 
-const NewMember = ({ blogs }: NewMemberProps) => {
+const NewMember = ({ blogs, updated }: NewMemberProps) => {
   const [member, setMember] = useState(emptyMember);
   const [formSent, setFormSent] = useState(false);
   const [spam, setSpam] = useState("");
@@ -58,6 +60,7 @@ const NewMember = ({ blogs }: NewMemberProps) => {
 
   return (
     <DefaultLayout
+      updated={updated}
       title={pagedata.title}
       description={pagedata.meta ?? pagedata.description}
     >
@@ -69,113 +72,77 @@ const NewMember = ({ blogs }: NewMemberProps) => {
         >
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>
-
-          <FormItem
-            name={pagedata.inputs[0].name as Inputs}
-            required={pagedata.inputs[0].required}
-            label={pagedata.inputs[0].label}
-            helper={pagedata.inputs[0].helper}
-            value={member[pagedata.inputs[0].name as Inputs] || ""}
-            onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setMember({
-                ...member,
-                [pagedata.inputs[0].name as Inputs]: e.target.value,
-              })
-            }
-          />
-          <FormItem
-            name={pagedata.inputs[1].name as Inputs}
-            required={pagedata.inputs[1].required}
-            label={pagedata.inputs[1].label}
-            helper={pagedata.inputs[1].helper}
-            value={member[pagedata.inputs[1].name as Inputs] || ""}
-            onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setMember({
-                ...member,
-                [pagedata.inputs[1].name as Inputs]: e.target.value,
-              })
-            }
-          />
-          {pagedata.selects.map((item, index: number) => (
-            <FormSelect
-              key={index}
-              name={item.name as Select}
-              required={item.required}
-              label={item.label}
-              helper={item.helper}
-              chosen={member.category}
-              onFieldChange={(e) =>
-                setMember({ ...member, [item.name]: e.target.value })
-              }
-            />
-          ))}
-          <FormTypes
-            memberType={member.category}
-            onMemberSet={(type) => setMember({ ...member, category: type })}
-          />
-
-          {member.category && (
-            <>
-              <p style={{ marginBottom: -28, fontSize: 12 }}>
-                tags for existing category. Click to add to visible tags if any
-                of them fits
-              </p>
-              <FormTagsList
-                posts={blogs.filter((blog: Blog) =>
-                  blog.type?.toLowerCase().includes(member.category)
+          {Object.keys(formdata).map((key) => {
+            return formdata[key].type === "formarea" ? (
+              <FormArea
+                data={formdata[key as TextAreas]}
+                key={key as TextAreas}
+                name={key as TextAreas}
+                value={member[key as TextAreas] || ""}
+                onFieldChange={(e) =>
+                  setMember({ ...member, [key as TextAreas]: e.target.value })
+                }
+              />
+            ) : formdata[key].type === "select" ? (
+              <FormSelectCategory
+                data={formdata[key as Select]}
+                key={key as Select}
+                name={key as Select}
+                member={member}
+                onMemberSet={(type) => setMember({ ...member, category: type })}
+                posts={blogs.filter((blog: CardType) =>
+                  blog.category?.toLowerCase().includes(member.category)
                 )}
-                // onTagClick={onTagSet}
                 onTagClick={(membertag) =>
                   setMember({
                     ...member,
-                    tags: `...${member.tags}, ${membertag}`,
+                    tags: `${member.tags}, ${membertag}`,
                   })
                 }
-                tags={member.tags}
-                category={member.category}
+                onFieldChange={(e) =>
+                  setMember({ ...member, [key as Select]: e.target.value })
+                }
               />
-            </>
-          )}
-          {pagedata.multiselects.map((item, index: number) => (
-            <FormTag
-              key={index}
-              name={item.name as MultiSelects}
-              required={item.required}
-              memberTags={member[item.name as MultiSelects]}
-              label={item.label}
-              helper={item.helper}
-              onValueUpdate={(membertags) =>
-                setMember({
-                  ...member,
-                  [item.name]: `${
-                    member[item.name as MultiSelects]
-                  }, ${membertags}`,
-                })
-              }
-              onCloseClick={(tag: string) =>
-                setMember({
-                  ...member,
-                  [item.name]: `${member[item.name as MultiSelects]
-                    .split(",")
-                    .filter((t: string) => tag !== t)}`,
-                })
-              }
-              blogs={blogs}
-            />
-          ))}
-          {pagedata.inputs.slice(2).map((item, index: number) => (
-            <FormItem
-              key={index}
-              name={item.name as Inputs}
-              required={item.required}
-              label={item.label}
-              helper={item.helper}
-              value={member[item.name as Inputs] || ""}
-              onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setMember({ ...member, [item.name as Inputs]: e.target.value })
-              }
-            />
-          ))}
+            ) : formdata[key].type === "multiselect" ? (
+              <FormTag
+                data={formdata[key as MultiSelects]}
+                key={key as MultiSelects}
+                name={key as MultiSelects}
+                memberTags={member[key as MultiSelects]}
+                onValueUpdate={(membertags) =>
+                  setMember({
+                    ...member,
+                    [key as MultiSelects]: `${
+                      member[key as MultiSelects]
+                    }, ${membertags}`,
+                  })
+                }
+                onCloseClick={(tag: string) =>
+                  setMember({
+                    ...member,
+                    [key]: `${member[key as MultiSelects]
+                      .split(",")
+                      .filter((t: string) => tag !== t)}`,
+                  })
+                }
+                blogs={blogs}
+              />
+            ) : (
+              <FormItem
+                data={formdata[key as Inputs]}
+                key={key as Inputs}
+                name={key as Inputs}
+                value={member[key as Inputs] || ""}
+                onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setMember({
+                    ...member,
+                    [key as Inputs]: e.target.value,
+                  })
+                }
+              />
+            );
+          })}
+
           <FormItem
             name="email"
             value={spam}
@@ -185,19 +152,7 @@ const NewMember = ({ blogs }: NewMemberProps) => {
               setSpam(e.target.value)
             }
           />
-          {pagedata.textAreas.map((item, index: number) => (
-            <FormArea
-              key={index}
-              name={item.name as TextAreas}
-              helper={item.helper}
-              required={item.required}
-              label={item.label}
-              value={member[item.name as TextAreas] || ""}
-              onFieldChange={(e) =>
-                setMember({ ...member, [item.name]: e.target.value })
-              }
-            />
-          ))}
+
           <div>
             <button
               type="submit"
@@ -218,7 +173,7 @@ const NewMember = ({ blogs }: NewMemberProps) => {
           <div style={{ marginTop: "-1rem" }}>
             {!formReady && (
               <div className="red flex-center-hor">
-                <FontAwesomeIcon icon={faClose} className={styles.icon} />
+                {/* <FontAwesomeIcon icon={faClose} className={styles.icon} /> */}
                 <p>{pagedata.required_fields_message}</p>
               </div>
             )}

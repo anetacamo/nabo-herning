@@ -16,9 +16,7 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log("resize!!!", window.innerWidth / 300);
       setDisplayedItem(Math.floor(window.innerWidth / 300));
-      console.log(displayedItems);
     };
 
     window.addEventListener("resize", handleResize);
@@ -64,12 +62,6 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
           className={`${styles.icon} ${styles.left}`}
           onClick={moveLeft}
           onKeyDown={moveLeft}
-          // onClick={() => setSlide(slide - 1)}
-          // onKeyDown={(event) => {
-          //   if (event.key === "ArrowLeft" || event.key === " ") {
-          //     () => setSlide(slide === 0 ? slides : slides - 1);
-          //   }
-          // }}
           role="button"
           tabIndex={0}
         />
@@ -78,7 +70,7 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
             <Link href={`/cards/${slugify(post.title)}`} key={index}>
               <a
                 className={`${styles.link} border-black bg-hover-${getColor(
-                  post.type
+                  post.category
                 )}`}
               >
                 <div className={`${styles.image} border-bottom-black`}>
@@ -96,13 +88,13 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
                   )}
                 </div>
 
-                {post?.type && (
+                {post?.category && (
                   <p
                     className={`${styles.type} border-black
-                    )} ${getColor(post.type)} bg-black`}
+                    )} ${getColor(post.category)} bg-black`}
                   >
-                    {post?.supertag && post.supertag}{" "}
-                    {post?.type.split(",")[0].trim()}
+                    {/* {post?.supertag && post.supertag}{" "} */}
+                    {post?.category.split(",")[0].trim()}
                   </p>
                 )}
                 {post?.title && (
