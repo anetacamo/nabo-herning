@@ -25,7 +25,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/*",
-    "constants/formNames.js"
+    "constants/formNames.js",
+    "pages/index.jsx"
   ],
   "exclude": ["node_modules"] //excludes files, also from the includes
 }

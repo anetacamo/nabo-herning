@@ -1,4 +1,5 @@
 @import "./colors-def.scss";
+@import "./variables.scss";
 
 $colors: (
   "lightgray": $lightgray,
@@ -42,7 +43,7 @@ $colors: (
 @each $name, $value in $colors {
   .bg-#{$name} {
     background-color: $value;
-    //background-image: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png');
+    //background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
   }
 }
 @each $name, $value in $colors {
@@ -81,10 +82,9 @@ $colors: (
 
 @each $name, $value in $colors {
   .border-bottom-#{$name} {
-    border-bottom: 2px solid $value !important;
-    @media (max-width: 400px) {
-      border-width: 1.5px !important;
-    }
+    border-bottom-color: $value !important;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
   }
 }
 

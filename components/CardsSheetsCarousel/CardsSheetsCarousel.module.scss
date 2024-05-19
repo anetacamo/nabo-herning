@@ -1,0 +1,33 @@
+.icon {
+  width: 3rem;
+  border: black 2px solid;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  margin: 0 12px;
+  &:hover {
+    background-color: black;
+    color: white;
+    transition-duration: 350ms;
+    cursor: pointer;
+  }
+}
+
+.flex {
+  display: flex;
+  margin: -6px;
+}
+
+.container {
+  flex: 1;
+}
+
+.image {
+  height: 6rem !important;
+}
+
+.left {
+  margin-left: 6px;
+}
+.right {
+  margin-right: 6px;
+}

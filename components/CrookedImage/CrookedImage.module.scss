@@ -18,8 +18,9 @@
 }
 
 .imageholder {
+  position: relative;
+
   @media (min-width: 599px) {
-    position: relative;
     height: 400px;
     width: 65%;
     min-width: 200px;

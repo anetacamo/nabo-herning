@@ -59,6 +59,7 @@ NEW UPDATES FOR THE MAP PROJECT
 - feature: added fallback picture when image is not rendering 1.5h
 - feature: added carousel to single pages and filters to be read from url. 4h
 - feature: fixing the problem of multiple drops on one page (4h)
+- fix: url filter changes without reload (1h)
 
 WHAT STILL NEED TO BE DONE
 

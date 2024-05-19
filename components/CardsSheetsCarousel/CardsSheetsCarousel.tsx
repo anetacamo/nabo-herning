@@ -1,12 +1,12 @@
-import styles from "./CardsSheets.module.scss";
-import React, { useState, useEffect } from "react";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { slugify } from "../../utils/slugify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
-import Link from "next/link";
+import { slugify } from "../../utils/slugify";
 import ImageWithFallBack from "../ImageWithFallBack/ImageWithFallBack";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./CardsSheetsCarousel.module.scss";
 
 export default function CardsSheetsCarousel(members: { members: Blog[] }) {
   const slides = members.members;
@@ -56,7 +56,7 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
       <h4 style={{ marginTop: -16 }}>
         showing {slide + 1} - {slide + displayedItems} out of {slidesLength}
       </h4>
-      <div className={`flex-center ${styles.container}`}>
+      <div className={`flex-center ${styles.flex}`}>
         <FontAwesomeIcon
           icon={faArrowLeft}
           className={`${styles.icon} ${styles.left}`}
@@ -65,21 +65,17 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
           role="button"
           tabIndex={0}
         />
-        <div className={`flex-center ${styles.container}`}>
+        <div className={`flex-center card-container ${styles.container}`}>
           {showItems().map((post: Blog, index: number) => (
             <Link href={`/cards/${slugify(post.title)}`} key={index}>
               <a
-                className={`${styles.link} border-black bg-hover-${getColor(
-                  post.category
-                )}`}
+                className={`${
+                  styles.card
+                } card-link border-black bg-hover-${getColor(post.category)}`}
               >
-                <div className={`${styles.image} border-bottom-black`}>
+                <div className={`border-bottom-black image ${styles.image}`}>
                   {post.image ? (
-                    <img
-                      src={post.image}
-                      alt={post?.title}
-                      className={styles.image}
-                    />
+                    <img src={post.image} alt={post?.title} />
                   ) : (
                     <ImageWithFallBack
                       src={`/images/places/${slugify(post?.title)}.jpg`}
@@ -90,16 +86,14 @@ export default function CardsSheetsCarousel(members: { members: Blog[] }) {
 
                 {post?.category && (
                   <p
-                    className={`${styles.type} border-black
+                    className={`type border-black
                     )} ${getColor(post.category)} bg-black`}
                   >
                     {/* {post?.supertag && post.supertag}{" "} */}
                     {post?.category.split(",")[0].trim()}
                   </p>
                 )}
-                {post?.title && (
-                  <h4 className={styles.special}>{post?.title}</h4>
-                )}
+                {post?.title && <h4 className="special">{post?.title}</h4>}
               </a>
             </Link>
           ))}

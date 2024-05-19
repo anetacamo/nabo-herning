@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import CardsSheets from "../components/CardsSheets/CardsSheets";
 import CategoryList from "../components/CategoryList/CategoryList";
 import FilterDisplay from "../components/FilterDisplay/FilterDisplay";
@@ -6,10 +7,8 @@ import MapGl from "../components/Map/MapGl";
 import TagsList from "../components/TagsList/TagsList";
 import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/home.json";
-import Blog from "../types/card.type";
+import { fetchGoogleSheetData } from "../hooks/data";
 import styles from "./Home/Home.module.scss";
-import { fetchGoogleSheetData } from "./../hooks/data";
-import { useRouter } from "next/router";
 
 export async function getStaticProps() {
   const { blogs, updated } = await fetchGoogleSheetData();
@@ -22,64 +21,60 @@ export async function getStaticProps() {
 }
 
 export default function Home({ blogs, updated }) {
-  const [category, setCategory] = useState<string>("");
-  const [tag, setTag] = useState<string>("");
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [entryPerPage, setEntryPerPage] = useState<number>(36);
-  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
+  const [category, setCategory] = useState("");
+  const [tag, setTag] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [entryPerPage, setEntryPerPage] = useState(36);
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
+  const [routeWasRead, setRouteWasRead] = useState(false);
 
   const router = useRouter();
 
   // watch for changes in tag, search and category and filter the blogs!
   useEffect(() => {
     const filtered = blogs
-      .filter((blog: Blog) => blog.tags?.toLowerCase().includes(tag))
+      .filter((blog) => blog.tags?.toLowerCase().includes(tag))
       .filter(
-        (blog: Blog) =>
+        (blog) =>
           blog.title?.toLowerCase().includes(searchQuery) ||
           blog.description?.toLowerCase().includes(searchQuery) ||
           blog.howtouse?.toLowerCase().includes(searchQuery) ||
           blog.invisible?.toLowerCase().includes(searchQuery)
       )
-      .filter((blog: Blog) => blog.category?.toLowerCase().includes(category));
+      .filter((blog) => blog.category?.toLowerCase().includes(category));
     setFilteredBlogs(filtered);
   }, [category, tag, searchQuery]);
 
-  //read stuff from the url, only on initial load
   useEffect(() => {
-    if (!router?.isReady) return;
-    const category = router.query.category;
-    const tag = router.query.tag;
-    if (category) {
-      onCategorySet(category as string);
-    }
-    if (tag) {
-      onTagSet(tag as string);
+    if (router.isReady) {
+      if (router.query.category) {
+        setCategory(router.query.category);
+      }
+      if (router.query.tag) {
+        setTag(router.query.tag);
+      }
+      setRouteWasRead(true);
     }
   }, [router.isReady]);
 
-  // watch for chages in tag and category and update the URL
   useEffect(() => {
-    if (category != "" && tag === "") {
-      router.push(`/?category=${encodeURIComponent(category.toLowerCase())}`);
-    }
+    if (routeWasRead) {
+      const query = {};
+      if (category) query.category = category.toLowerCase();
+      if (tag) query.tag = tag.toLowerCase();
 
-    if (category != "" && tag != "") {
       router.push(
-        `/?category=${encodeURIComponent(
-          category.toLowerCase()
-        )}&tag=${encodeURIComponent(tag.toLowerCase())}`
+        {
+          pathname: "/",
+          query: query,
+        },
+        undefined,
+        { shallow: true }
       );
     }
-    if (category === "" && tag != "") {
-      router.push(`/?tag=${encodeURIComponent(tag.toLowerCase())}`);
-    }
-    if (category === "" && tag === "") {
-      router.push(`/`);
-    }
-  }, [category, tag]);
+  }, [category, tag, routeWasRead]);
 
-  const onCategorySet = (cat: string) => {
+  const onCategorySet = (cat) => {
     if (category === cat) {
       setCategory("");
     } else {
@@ -87,7 +82,7 @@ export default function Home({ blogs, updated }) {
     }
   };
 
-  const onTagSet = (t: string) => {
+  const onTagSet = (t) => {
     setTag(t === tag ? "" : t.toLowerCase());
   };
 

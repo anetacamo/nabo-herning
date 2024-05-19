@@ -1,0 +1,74 @@
+@import "./colors-def.scss";
+@import "./variables.scss";
+
+$card-margin: 6px;
+$card-border-radius: 16px;
+
+$card-padding: 1.25rem;
+$card-padding-s: 1rem;
+
+.card-container {
+  align-items: unset;
+  margin: -$card-margin;
+}
+
+.card-link {
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+  }
+  a {
+    color: white;
+  }
+  margin: $card-margin;
+  padding: $card-padding;
+  min-width: 16rem;
+  max-width: 24rem;
+  flex: 1;
+  @media (max-width: 700px) {
+    min-width: 12rem;
+    max-width: 24rem;
+  }
+  @include border;
+  border-radius: $card-border-radius;
+  @media (max-width: 700px) {
+    padding: $card-padding-s;
+  }
+  h5 {
+    margin: 0;
+    font-size: 12px;
+    @media (max-width: 400px) {
+      font-size: 11px;
+    }
+  }
+  .image {
+    text-align: center;
+    margin: -$card-padding;
+    position: relative;
+    height: 10rem;
+    border-top-left-radius: $card-border-radius - $border-width;
+    border-top-right-radius: $card-border-radius - $border-width;
+    overflow: hidden;
+    @media (max-width: 700px) {
+      margin: -$card-padding-s;
+    }
+  }
+  .special {
+    margin-bottom: 0.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+  .type {
+    @include type-m;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: -6px;
+    position: relative;
+    @media (max-width: 700px) {
+      margin-left: -2px;
+    }
+  }
+
+  .description {
+    margin-top: 12px !important;
+  }
+}
