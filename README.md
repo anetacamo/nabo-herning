@@ -1,5 +1,22 @@
 ## about project
 
+link to sheets:
+https://docs.google.com/spreadsheets/d/1mKKIkmtiaZ6uh46wuUepk26lSMcVFjLjHOE-XOr8vCM
+
+texts to edit:
+https://github.com/anetacamo/nabo-helsingor/tree/main/texts
+
+images to add:
+https://github.com/anetacamo/nabo-helsingor/tree/main/public/images
+
+info about colors:
+https://github.com/anetacamo/nabo-helsingor/blob/main/texts/README.md
+
+websites: 
+https://nabo-helsingor.vercel.app/
+https://www.unghelsingor.dk/
+
+
 This project is opensourse and built with next, react and typescript
 node version: 20.7.1
 `yarn run dev`

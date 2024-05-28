@@ -11,7 +11,7 @@ export default function ImageWithFallback({
   alt,
 }: ImageWithFallbackProps) {
   const [imgSrc, set_imgSrc] = useState(src);
-  const fallbackSrc = "/images/aa-map.png";
+  const fallbackSrc = "/images/about.png";
 
   useEffect(() => {
     set_imgSrc(src);

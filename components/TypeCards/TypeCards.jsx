@@ -1,17 +1,13 @@
 import Image from "next/image";
 import styles from "./TypeCards.module.scss";
 import types from "../../texts/types.json";
-import CategoryType from "../../types/category.type";
 import Link from "next/link";
+import { slugify } from "../../utils/slugify";
 
-interface TypeCardsProps {
-  en?: boolean;
-}
-
-export default function TypeCards({ en }: TypeCardsProps) {
+export default function TypeCards({ en }) {
   return (
     <div className={`${styles.container} flex-center`}>
-      {types.map((type: CategoryType, index: number) => (
+      {types.map((type, index) => (
         <Link
           href={`/?category=${type.name}`}
           key={index}
@@ -20,8 +16,8 @@ export default function TypeCards({ en }: TypeCardsProps) {
           <div className={`${styles.card} bg-${type.color}`}>
             <div className={styles.image}>
               <Image
-                src={`/categories/${type.color}.png`}
-                alt="blue"
+                src={`/images/categories/${type.image || slugify(type.name)}.png`}
+                alt={type.title}
                 layout="fill"
                 quality="7"
                 objectFit="cover"

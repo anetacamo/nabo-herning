@@ -1,5 +1,4 @@
 [
   { "name": "om", "link": "/om" },
-  { "name": "indsend", "link": "/indsend" },
-  { "name": "english", "link": "/english" }
+  { "name": "indsend", "link": "/indsend" }
 ]
