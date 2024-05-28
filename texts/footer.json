@@ -2,8 +2,8 @@
   {
     "title": "Om Kultur Kortet",
     "text": "Kulturkortet er et samlingssted for ressourcer og aktiviteter som unge i Helsingør kan bruge.",
-    "lines": "<a href='/om'>Læs mer her</a><br/><br/>Skabt of vedligeholdt af",
-    "image": "/page-images/fl-logo.png"
+    "lines": "<a href='/om'>Læs mere her</a><br/><br/>Skabt af vedligeholdt af",
+    "image": "/images/logo/fl-logo.png"
   },
   {
     "title": "Contact",
@@ -35,6 +35,6 @@
   {
     "title": "credits",
     "lines": "Code and Design by<br/><a href='https://anetacamo.github.io/#/' rel='noopener noreferrer'  target='_blank' >Aneta Camo</a><br/><br/>Made possible by<br/> ERASMUS+ and the European Union",
-    "image": "/page-images/eu-logo.png"
+    "image": "/images/logo/eu-logo.png"
   }
 ]
