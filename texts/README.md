@@ -38,3 +38,25 @@
   ]
 }
 ```
+
+
+### COLORS TO USE 
+  "lightgray": $lightgray,
+  "gray": $gray,
+  "darkblue": $darkblue,
+  "blue": $blue,
+  "lightblue": $lightblue,
+  "turqoise": $turqoise,
+  "green": $green,
+  "greenlight": $greenlight,
+  "yellowgreen": $yellowgreen,
+  "yellow": $yellow,
+  "orange": $orange,
+  "salmon": $salmon,
+  "red": $red,
+  "pink": $pink,
+  "pinkdark": $pinkdark,
+  "purple": $purple,
+  "purpledark": $purpledark,
+  "black": $black,
+);
