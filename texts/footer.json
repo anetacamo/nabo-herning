@@ -1,22 +1,17 @@
 [
   {
-    "title": "Om Kultur Kortet",
-    "text": "Kulturkortet er et samlingssted for ressourcer og aktiviteter som unge i Helsingør kan bruge.",
+    "title": "Om Unge Kortet",
+    "text": "Unge kortet er et samlingssted for ressourcer og aktiviteter som unge i Helsingør kan bruge.",
     "lines": "<a href='/om'>Læs mere her</a><br/><br/>Skabt af vedligeholdt af",
-    "image": "/images/logo/fl-logo.png"
+    "image": "/images/logo/jakontoret.png"
   },
   {
     "title": "Contact",
-    "lines": "<a href='https://www.frontloberne.dk' rel='noopener noreferrer'  target='_blank' >Frontløberne</a><br/>Jægegårdsgade 154c<br/>Aarhus C<br/><a href='mailto:info@frontloberne.dk' rel='noopener noreferrer' target='_blank' >info@frontloberne.dk</a>"
+    "lines": "<a href='https://www.ja-kontoret.dk' rel='noopener noreferrer'  target='_blank' >JA-Kontoret</a><br/>Rasmus Knudsens Vej 52<br/>Helsingør<br/><a href='mailto:stj08@helsingor.dk' rel='noopener noreferrer' target='_blank' >stj08@helsingor.dk</a>"
   },
 
-  {
-    "title": "Partnered Cities",
-    "bulletlinks": [
-      { "name": "Nabo Tromsø", "link": "www.google.com" },
-      { "name": "Nabo Aarhus", "link": "https://www.kultur-kortet.dk" }
     ],
-    "lines": "<br/>Skal dit projekt være med på kortet?<br/><a href='/indsend'>Indsend</a><br/><br/>Skal din by have et kultur-kort?<br/><a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a><br/><a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"
+    "lines": "<br/>Skal dit projekt/ressource være med på kortet?<br/><a href='/indsend'>Indsend</a><br/><br/>Skal din by have et kultur-kort?<br/><a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a><br/><a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"
   },
 
   {
@@ -26,10 +21,10 @@
   },
 
   {
-    "title": "Request takedown / EDIT",
+    "title": "Rettelser",
     "text": "Hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, kontakte os.",
     "bulletlinks": [
-      { "name": "info@frontloberne.dk", "link": "mailto:info@frontloberne.dk" }
+      { "name": "JA-Kontoret", "link": "mailto:stj08@helsingor.dk" }
     ]
   },
   {
