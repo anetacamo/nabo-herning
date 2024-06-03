@@ -29,27 +29,27 @@ export const DefaultLayout = ({
   return (
     <>
       <Head>
-        <title>{title} | Kultur Kortet Århus</title>
+        <title>{title} | Unge Kortet Helsingør</title>
         <meta
           name="description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer for unge."
           }
         />
         <meta
           name="keywords"
-          content={keywords || "aarhus, culture, map, guide, interactive"}
+          content={keywords || "Helsingør, culture, map, guide, interactive"}
         />
         <meta name="author" content="Aneta Camo" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={`${title} | Kultur Kortet Århus`} />
+        <meta name="twitter:title" content={`${title} | Unge Kortet Helsingør`} />
         <meta
           name="twitter:description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer for unge."
           }
         />
         <meta
@@ -58,12 +58,12 @@ export const DefaultLayout = ({
             image ? `places/${image}.jpg` : "about.png"
           }`}
         />{" "}
-        <meta property="og:title" content={`${title} | Kultur Kortet Århus`} />
+        <meta property="og:title" content={`${title} | Unge Kortet Helsingør`} />
         <meta
           property="og:description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer for unge."
           }
         />
         <meta
