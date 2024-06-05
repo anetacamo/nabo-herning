@@ -9,17 +9,14 @@
     "title": "Contact",
     "lines": "<a href='https://www.ja-kontoret.dk' rel='noopener noreferrer'  target='_blank' >JA-Kontoret</a><br/>Rasmus Knudsens Vej 52<br/>Helsingør<br/><a href='mailto:stj08@helsingor.dk' rel='noopener noreferrer' target='_blank' >stj08@helsingor.dk</a>"
   },
-
-    ],
+  {
     "lines": "<br/>Skal dit projekt/ressource være med på kortet?<br/><a href='/indsend'>Indsend</a><br/><br/>Skal din by have et kultur-kort?<br/><a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a><br/><a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"
   },
-
   {
     "title": "Sidst opdateret",
     "updated": true,
     "text": "Kultur-Kortet er opdateret løbende. Tag kontakt, hvis du ser noget gammelt info."
   },
-
   {
     "title": "Rettelser",
     "text": "Hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, kontakte os.",
