@@ -1,7 +1,7 @@
 {
-  "title": "Unge Kortet Helsingør",
+  "title": "Unge Kortet Herning",
   "image": "/images/about.png",
-  "description": "Unge kortet er et overblik af ressourcer for unge i og omkring Helsingør. ",
+  "description": "Unge kortet er et overblik af ressourcer for unge i og omkring Herning. ",
   "meta": "",
   "meta-keywords": "",
   "sections": [
@@ -16,7 +16,7 @@
     {
       "title": "Rettelser",
       "text": "Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
-  
+
       "orientation": "right",
       "background": "greenlight"
     },

@@ -17,7 +17,7 @@ https://nabo-helsingor.vercel.app/
 https://www.unghelsingor.dk/
 
 
-This project is opensourse and built with next, react and typescript
+This project is opensource and built with next, react and typescript
 node version: 20.7.1
 `yarn run dev`
 

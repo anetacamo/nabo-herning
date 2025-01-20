@@ -29,7 +29,7 @@ export const DefaultLayout = ({
   return (
     <>
       <Head>
-        <title>{title} | Unge Kortet Helsingør</title>
+        <title>{title} | Unge Kortet Herning</title>
         <meta
           name="description"
           content={
@@ -39,12 +39,12 @@ export const DefaultLayout = ({
         />
         <meta
           name="keywords"
-          content={keywords || "Helsingør, culture, map, guide, interactive"}
+          content={keywords || "Herning, culture, map, guide, interactive"}
         />
         <meta name="author" content="Aneta Camo" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={`${title} | Unge Kortet Helsingør`} />
+        <meta name="twitter:title" content={`${title} | Unge Kortet Herning`} />
         <meta
           name="twitter:description"
           content={
@@ -58,7 +58,7 @@ export const DefaultLayout = ({
             image ? `places/${image}.jpg` : "about.png"
           }`}
         />{" "}
-        <meta property="og:title" content={`${title} | Unge Kortet Helsingør`} />
+        <meta property="og:title" content={`${title} | Unge Kortet Herning`} />
         <meta
           property="og:description"
           content={

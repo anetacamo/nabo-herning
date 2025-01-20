@@ -1,13 +1,13 @@
 [
   {
     "title": "Om Unge Kortet",
-    "text": "Unge kortet er et samlingssted for ressourcer og aktiviteter som unge i Helsingør kan bruge.",
+    "text": "Unge kortet er et samlingssted for ressourcer og aktiviteter som unge i Herning kan bruge.",
     "lines": "<a href='/om'>Læs mere her</a><br/><br/>Skabt af vedligeholdt af",
     "image": "/images/logo/jakontoret.png"
   },
   {
     "title": "Contact",
-    "lines": "<a href='https://www.ja-kontoret.dk' rel='noopener noreferrer'  target='_blank' >JA-Kontoret</a><br/>Rasmus Knudsens Vej 52<br/>Helsingør<br/><a href='mailto:stj08@helsingor.dk' rel='noopener noreferrer' target='_blank' >stj08@helsingor.dk</a>"
+    "lines": "<a href='https://www.ja-kontoret.dk' rel='noopener noreferrer'  target='_blank' >JA-Kontoret</a><br/>Rasmus Knudsens Vej 52<br/>Herning<br/><a href='mailto:stj08@helsingor.dk' rel='noopener noreferrer' target='_blank' >stj08@helsingor.dk</a>"
   },
   {
     "lines": "<br/>Skal dit projekt/ressource være med på kortet?<br/><a href='/indsend'>Indsend</a><br/><br/>Skal din by have et kultur-kort?<br/><a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a><br/><a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"

@@ -33,7 +33,7 @@ export default function MapGl({ posts }: MapGlProps) {
               Kultur Kortet
             </span>
             <br />
-            <span className={`${styles.highlighted} bg-blue`}>Helsingør</span>
+            <span className={`${styles.highlighted} bg-blue`}>Herning</span>
           </h1>
           <p>
             {/* <span className="highlighted bg-blue">{pagedata.description}</span> */}
