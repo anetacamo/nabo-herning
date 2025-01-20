@@ -1,5 +1,7 @@
 ### TODO
 
+
+
 BACKLOG
 
 - implement user friendly editor on top > Tina.io
@@ -64,6 +66,5 @@ NEW UPDATES FOR THE MAP PROJECT
 WHAT STILL NEED TO BE DONE
 
 - optimize data editing, there is a lot of texts to change and I would like to make it simpler. (4h)
-- link to their URL (change DNS servers)
-
+- link to new URL (change DNS servers)
 - important: UPDATE OLD PROJECTS with those updates (2 days)
