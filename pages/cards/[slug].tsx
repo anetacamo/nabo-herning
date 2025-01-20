@@ -23,7 +23,7 @@ export async function getServerSideProps(context: { params: { slug: any } }) {
   const { blogs, updated } = await fetchGoogleSheetData();
 
   const blog = blogs.filter((card: Blog) => slugify(card?.title) === name)[0];
-  const blogType = blog.category?.split(",")[0];
+  const blogType = blog?.category?.split(",")[0];
 
   const allRelated = blogs.filter(
     (b: Blog) => b.category?.split(",")[0] === blogType

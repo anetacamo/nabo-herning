@@ -91,7 +91,7 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
                 member={member}
                 onMemberSet={(type) => setMember({ ...member, category: type })}
                 posts={blogs.filter((blog: CardType) =>
-                  blog.category?.toLowerCase().includes(member.category)
+                  blog?.category?.toLowerCase().includes(member.category)
                 )}
                 onTagClick={(membertag) =>
                   setMember({

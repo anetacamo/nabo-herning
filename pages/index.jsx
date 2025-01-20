@@ -41,7 +41,7 @@ export default function Home({ blogs, updated }) {
           blog.howtouse?.toLowerCase().includes(searchQuery) ||
           blog.invisible?.toLowerCase().includes(searchQuery)
       )
-      .filter((blog) => blog.category?.toLowerCase().includes(category));
+      .filter((blog) => blog?.category?.toLowerCase().includes(category));
     setFilteredBlogs(filtered);
   }, [category, tag, searchQuery]);
 
