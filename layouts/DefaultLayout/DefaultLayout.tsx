@@ -29,12 +29,12 @@ export const DefaultLayout = ({
   return (
     <>
       <Head>
-        <title>{title} | Unge Kortet Herning</title>
+        <title>{title} | Kultur Kortet Herning</title>
         <meta
           name="description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer for unge."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
           }
         />
         <meta
@@ -44,12 +44,15 @@ export const DefaultLayout = ({
         <meta name="author" content="Aneta Camo" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={`${title} | Unge Kortet Herning`} />
+        <meta
+          name="twitter:title"
+          content={`${title} | Kultur Kortet Herning`}
+        />
         <meta
           name="twitter:description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer for unge."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
           }
         />
         <meta
@@ -58,12 +61,15 @@ export const DefaultLayout = ({
             image ? `places/${image}.jpg` : "about.png"
           }`}
         />{" "}
-        <meta property="og:title" content={`${title} | Unge Kortet Herning`} />
+        <meta
+          property="og:title"
+          content={`${title} | Kultur Kortet Herning`}
+        />
         <meta
           property="og:description"
           content={
             description ||
-            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer for unge."
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer."
           }
         />
         <meta
