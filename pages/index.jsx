@@ -33,9 +33,6 @@ export default function Home({ blogs, updated }) {
 
   // watch for changes in tag, search and category and filter the blogs!
   useEffect(() => {
-    const fil = blogs.filter((blog) =>
-      blog?.category?.toLowerCase().includes(category)
-    );
     const filtered = blogs
       .filter((blog) => blog.tags?.toLowerCase().includes(tag))
       .filter(
@@ -43,9 +40,8 @@ export default function Home({ blogs, updated }) {
           blog.title?.toLowerCase().includes(searchQuery) ||
           blog.description?.toLowerCase().includes(searchQuery) ||
           blog.howtouse?.toLowerCase().includes(searchQuery)
-      );
-    // .filter((blog) => blog?.type?.toLowerCase().includes(category));
-    // .filter((blog) => blog?.category?.toLowerCase().includes(category));
+      )
+      .filter((blog) => blog?.category?.toLowerCase().includes(category));
     setFilteredBlogs(filtered);
   }, [category, tag, searchQuery]);
 
