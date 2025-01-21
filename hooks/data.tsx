@@ -5,17 +5,21 @@ const cachedData: Blog[] | null = null;
 
 export async function fetchGoogleSheetData(): Promise<Blog[]> {
   if (cachedData) {
+    console.log("cd");
     return cachedData;
   }
 
-  const cardsFetchUrl = process.env.NEXT_PUBLIC_CARDS_FETCH as string;
+  const cardsFetchUrl = process.env.CARDS_FETCH as string;
   const response = await fetch(cardsFetchUrl);
+
   const csv = await response.text();
   const results = Papa.parse<Blog>(csv, { header: true });
+
   const parsedBlogs = results.data.filter(
     (card: Blog, index: number) => index > 0 && card?.title
   );
-  const updated = results.data[0].updated;
+
+  const updated = results?.data[0]?.updated || null;
 
   //return cachedData;
   return { blogs: parsedBlogs, updated };

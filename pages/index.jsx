@@ -12,6 +12,7 @@ import styles from "./Home/Home.module.scss";
 
 export async function getStaticProps() {
   const { blogs, updated } = await fetchGoogleSheetData();
+
   return {
     props: {
       blogs,
@@ -32,16 +33,19 @@ export default function Home({ blogs, updated }) {
 
   // watch for changes in tag, search and category and filter the blogs!
   useEffect(() => {
+    const fil = blogs.filter((blog) =>
+      blog?.category?.toLowerCase().includes(category)
+    );
     const filtered = blogs
       .filter((blog) => blog.tags?.toLowerCase().includes(tag))
       .filter(
         (blog) =>
           blog.title?.toLowerCase().includes(searchQuery) ||
           blog.description?.toLowerCase().includes(searchQuery) ||
-          blog.howtouse?.toLowerCase().includes(searchQuery) ||
-          blog.invisible?.toLowerCase().includes(searchQuery)
-      )
-      .filter((blog) => blog?.category?.toLowerCase().includes(category));
+          blog.howtouse?.toLowerCase().includes(searchQuery)
+      );
+    // .filter((blog) => blog?.type?.toLowerCase().includes(category));
+    // .filter((blog) => blog?.category?.toLowerCase().includes(category));
     setFilteredBlogs(filtered);
   }, [category, tag, searchQuery]);
 
@@ -118,14 +122,15 @@ export default function Home({ blogs, updated }) {
             onCategoryClick={onCategorySet}
             category={category}
           />
-          {blogs.length !== filteredBlogs.length && (
-            <TagsList
-              posts={filteredBlogs}
-              onTagClick={onTagSet}
-              tag={tag}
-              category={category}
-            />
-          )}
+          {blogs.length !== filteredBlogs.length &&
+            filteredBlogs.length > 0 && (
+              <TagsList
+                posts={filteredBlogs}
+                onTagClick={onTagSet}
+                tag={tag}
+                category={category}
+              />
+            )}
         </div>
         <CardsSheets members={filteredBlogs.slice(0, entryPerPage)} />
         {entryPerPage < filteredBlogs.length && (

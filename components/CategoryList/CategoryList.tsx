@@ -17,7 +17,7 @@ export default function CategoryList({
 }: CategoryProps) {
   const allCategories: string[] = [];
   posts.map((item) => {
-    const singleType = item.category.split(",")[0].toLowerCase().trim();
+    const singleType = item.category?.split(",")[0].toLowerCase().trim();
     !allCategories.includes(singleType) && allCategories.push(singleType);
   });
 

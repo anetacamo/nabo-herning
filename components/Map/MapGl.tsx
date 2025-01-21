@@ -17,8 +17,8 @@ export default function MapGl({ posts }: MapGlProps) {
   const [name, setName] = useState("");
   const [item, setItem] = useState(null);
   const [viewState, setViewState] = useState({
-    latitude: 56.03550959531433,
-    longitude: 12.582182444184792,
+    latitude: 56.135554609420794,
+    longitude: 8.95243742557034,
     zoom: 11,
   });
 
@@ -56,8 +56,8 @@ export default function MapGl({ posts }: MapGlProps) {
         maxZoom={17}
         minZoom={10}
         scrollZoom={false}
-        mapStyle={process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL}
-        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+        mapStyle={process.env.MAPBOX_STYLE_URL}
+        mapboxAccessToken={process.env.MAPBOX_TOKEN}
       >
         <NavigationControl />
         {organizePosts(posts).map(

@@ -68,7 +68,7 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
         <form
           className={styles.form}
           method="POST"
-          action={process.env.NEXT_PUBLIC_SUBMIT_FORM}
+          action={process.env.SUBMIT_FORM}
         >
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>
