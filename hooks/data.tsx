@@ -9,7 +9,9 @@ export async function fetchGoogleSheetData(): Promise<Blog[]> {
     return cachedData;
   }
 
-  const cardsFetchUrl = process.env.CARDS_FETCH as string;
+  //const cardsFetchUrl = process.env.NEXT_PUBLIC_CARDS_FETCH as string;
+  const cardsFetchUrl =
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTsI2PibUmFvnn2uApHx8h1iX2VUQwVSlngbEZymGfl1I_NJCw6ux2siPaMX-YM1X94nD4Fh5wRMMk-/pub?gid=0&single=true&output=csv";
   const response = await fetch(cardsFetchUrl);
 
   const csv = await response.text();

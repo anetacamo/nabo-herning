@@ -56,8 +56,8 @@ export default function MapGl({ posts }: MapGlProps) {
         maxZoom={17}
         minZoom={10}
         scrollZoom={false}
-        mapStyle={process.env.MAPBOX_STYLE_URL}
-        mapboxAccessToken={process.env.MAPBOX_TOKEN}
+        mapStyle={process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL}
+        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
       >
         <NavigationControl />
         {organizePosts(posts).map(
