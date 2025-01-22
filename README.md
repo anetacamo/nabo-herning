@@ -1,20 +1,19 @@
 ## about project
 
-link to sheets:
-https://docs.google.com/spreadsheets/d/1mKKIkmtiaZ6uh46wuUepk26lSMcVFjLjHOE-XOr8vCM
+link to sheets (Placeholder):
+https://docs.google.com/spreadsheets/d/1P_oT7oGCgBRAeHpAB1OUaV6IzyNEX-1-5JeZpjLqgtM/edit?gid=0#gid=0
 
 texts to edit:
-https://github.com/anetacamo/nabo-helsingor/tree/main/texts
+https://github.com/anetacamo/nabo-herning/tree/main/texts
 
 images to add:
-https://github.com/anetacamo/nabo-helsingor/tree/main/public/images
+https://github.com/anetacamo/nabo-herning/tree/main/public/images
 
 info about colors:
-https://github.com/anetacamo/nabo-helsingor/blob/main/texts/README.md
+https://github.com/anetacamo/nabo-herning/blob/main/texts/README.md
 
 websites:
-https://nabo-helsingor.vercel.app/
-https://www.unghelsingor.dk/
+https://nabo-herning.vercel.app/
 
 This project is opensource and built with next, react and typescript
 node version: 20.7.1
