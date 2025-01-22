@@ -1,6 +1,6 @@
 [
   {
-    "name": "event",
+    "name": "udstilling",
     "icon": "star",
     "image": "event",
     "color": "red",
@@ -21,21 +21,28 @@
     "about": "disse er grupper og kollektiver, der mødes omkring en fælles interesse. Find et hold at skateboarde med eller et DJ kollektiv til at spille til dit arrangement."
   },
   {
-    "name": "læring",
+    "name": "kreative produktion",
     "icon": "glasses",
     "image": "workshop",
     "color": "darkblue",
     "about": "Disser er steder, der har fokus på læring. Her kan du finde steder at lære alt fra keramik, til filmproduktion, til svejsning, til fundraising. Nogle kører årelange programmer, og nogle afholder timelange workshops."
   },
   {
-    "name": "rådgivning",
+    "name": "økonomisk støtte",
     "icon": "airplane",
     "image": "outside",
     "color": "greenlight",
     "about": "Her finder du grupper og rum, der laver arrangementer; nogle årlige, nogle månedlige, nogle ugentlige. Dette er et godt sted at finde scener at optræde på og interessante begivenheder at deltage i."
   },
   {
-    "name": "forening",
+    "name": "ressourcer til projektafvikling",
+    "icon": "mocca",
+    "image": "studio",
+    "color": "pinkdark",
+    "about": "Disse er steder, der tilbyder ting, du måske har brug for, når du arbejder med kunst og kultur. En gratis møbelbutik, et trykkeri, steder at låne tøj mv."
+  },
+    {
+    "name": "samlingssteder",
     "icon": "mocca",
     "image": "studio",
     "color": "pinkdark",
