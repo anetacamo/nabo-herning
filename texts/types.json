@@ -25,14 +25,14 @@
     "icon": "glasses",
     "image": "workshop",
     "color": "darkblue",
-    "about": "Disser er steder, der har fokus på læring. Her kan du finde steder at lære alt fra keramik, til filmproduktion, til svejsning, til fundraising. Nogle kører årelange programmer, og nogle afholder timelange workshops."
+    "about": "Disser er steder, der har fokus på kreativ produktion."
   },
   {
     "name": "økonomisk støtte",
     "icon": "airplane",
     "image": "outside",
     "color": "greenlight",
-    "about": "Her finder du grupper og rum, der laver arrangementer; nogle årlige, nogle månedlige, nogle ugentlige. Dette er et godt sted at finde scener at optræde på og interessante begivenheder at deltage i."
+    "about": "Her finder du steder du kan finde finansiel støtte til dit projekt."
   },
   {
     "name": "ressourcer til projektafvikling",
@@ -46,6 +46,6 @@
     "icon": "mocca",
     "image": "studio",
     "color": "orange",
-    "about": "Disse er steder, der tilbyder ting, du måske har brug for, når du arbejder med kunst og kultur. En gratis møbelbutik, et trykkeri, steder at låne tøj mv."
+    "about": "Disse er gode samlingssteder for at f. eks mødes til at snakke jeres projekt."
   }
 ]
