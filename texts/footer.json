@@ -1,13 +1,13 @@
 [
   {
     "title": "Om Kultur Kortet",
-    "text": "Kultur kortet er et samlingssted for ressourcer og aktiviteter i Herning kan bruge.",
+    "text": "Kultur-Kortet er et samlingssted for ressourcer kulturskabere i Herning kan bruge.",
     "lines": "<a href='/om'>Læs mere her</a><br/><br/>Skabt af vedligeholdt af",
-    "image": "/images/logo/jakontoret.png"
+    "image": "/images/logo/placeholder.png"
   },
   {
     "title": "Contact",
-    "lines": "<a href='https://www.ja-kontoret.dk' rel='noopener noreferrer'  target='_blank' >JA-Kontoret</a><br/>Rasmus Knudsens Vej 52<br/>Herning<br/><a href='mailto:stj08@helsingor.dk' rel='noopener noreferrer' target='_blank' >stj08@helsingor.dk</a>"
+    "lines": "<a href='https://www.herning.dk' rel='noopener noreferrer'  target='_blank' >Herning Kommune</a><br/>Post addresse<br/>Herning<br/><a href='mailto:bekkcr@herning.dk' rel='noopener noreferrer' target='_blank' >bekkcr@herning.dk</a>"
   },
   {
     "lines": "<br/>Skal dit projekt/ressource være med på kortet?<br/><a href='/indsend'>Indsend</a><br/><br/>Skal din by have et kultur-kort?<br/><a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a><br/><a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"
@@ -21,7 +21,7 @@
     "title": "Rettelser",
     "text": "Hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, kontakte os.",
     "bulletlinks": [
-      { "name": "JA-Kontoret", "link": "mailto:stj08@helsingor.dk" }
+      { "name": "Herning Kommune", "link": "mailto:bekkcr@herning.dk" }
     ]
   },
   {
