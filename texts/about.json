@@ -7,7 +7,7 @@
   "sections": [
     {
       "title": "Kender du til noget der skal med på kortet",
-      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.ja-kontoret.dk'>JA-Kontoret</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne",
+      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.herning.dk'>Herning Kommune</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "left",
       "background": "green"
@@ -24,14 +24,14 @@
     {
       "title": "Kortets Indhold",
       "text": "Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
-      "buttons": [{ "name": "Kontakt", "link": "mailto:stj08@helsingor.dk" }],
+      "buttons": [{ "name": "Kontakt", "link": "mailto:bekkcr@herning.dk" }],
       "orientation": "left",
       "background": "red"
     },
 
     {
       "title": "Kortets format",
-      "text": "Kortet er udviklet af Aneta Camo. Koden bag Kultur-Kortet er open source og tilgængelig. </br></br>Hvis du vil have et Kultur-Kort i din by, så kan du finde <a href='https://github.com/anetacamo/nabo'>koden på GitHub</a>. </br>Set det op selv, eller <a href='https://anetacamo.github.io/'>få hjælp fra Aneta</a>.",
+      "text": "Kortet er udviklet af Frontløberne i samarbejd med Aneta Camo. Koden bag Kultur-Kortet er open source og tilgængelig. </br></br>Hvis du vil have et Kultur-Kort i din by, så kan du finde <a href='https://github.com/anetacamo/nabo'>koden på GitHub</a>. </br>Set det op selv, eller <a href='https://anetacamo.github.io/'>få hjælp fra Aneta</a>.",
       "orientation": "right",
       "background": "black"
     },
