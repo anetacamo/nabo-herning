@@ -1,7 +1,7 @@
 {
   "title": "Kultur Kortet Herning",
   "image": "/images/about.png",
-  "description": "Kultur kortet er et overblik af ressourcer i og omkring Herning. ",
+  "description": "Kultur-Kortet Herning er et overblik over ressourcer til kulturskabere i og omkring Herning. ",
   "meta": "",
   "meta-keywords": "",
   "sections": [
@@ -17,7 +17,7 @@
 
     {
       "title": "Kortets Indhold",
-      "text": "Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
+      "text": "Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakt til os.",
       "buttons": [{ "name": "Kontakt", "link": "mailto:bekkcr@herning.dk" }],
       "orientation": "left",
       "background": "red"
@@ -32,7 +32,7 @@
 
     {
       "title": "Hvorfor de kategorier?",
-      "text": "De ressourcer, vi ønskede at sætte på kortet, er super varierede. De her 6 kategorier er det vi kom frem til. Her kan du læse lidt mer om hver af dem.",
+      "text": "Vi har valgt at dele ressourcerne op i 7 kategorier. Herunder kan du læse lidt mere om dem.",
       "background": "white",
       "orientation": "center"
     }
