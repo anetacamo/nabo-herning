@@ -1,7 +1,7 @@
 [
   {
     "title": "Om Kultur Kortet",
-    "text": "Kultur-Kortet er et samlingssted for ressourcer kulturskabere i Herning kan bruge.",
+    "text": "Kultur-Kortet Herning er et overblik over ressourcer til kulturskabere i og omkring Herning.",
     "lines": "<a href='/om'>Læs mere her</a><br/><br/>Skabt af vedligeholdt af",
     "image": "/images/logo/placeholder.png"
   },
@@ -19,7 +19,7 @@
   },
   {
     "title": "Rettelser",
-    "text": "Hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, kontakte os.",
+    "text": "Hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, bedes du kontakte os.",
     "bulletlinks": [
       { "name": "Herning Kommune", "link": "mailto:bekkcr@herning.dk" }
     ]
