@@ -9,7 +9,7 @@
       "title": "Kender du til noget der skal med på kortet",
       "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.herning.dk'>Herning Kommune</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
-      "orientation": "left",
+      "orientation": "right",
       "background": "green"
     },
 
