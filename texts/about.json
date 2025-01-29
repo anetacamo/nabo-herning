@@ -6,7 +6,7 @@
   "meta-keywords": "",
   "sections": [
     {
-      "title": "Kender du til noget der skal med på kortet",
+      "title": "Skal din ressource med på kortet?",
       "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.herning.dk'>Herning Kommune</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "right",
@@ -17,7 +17,7 @@
 
     {
       "title": "Kortets Indhold",
-      "text": "Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakt til os.",
+      "text": "Hvis du har rettelser, eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakt til os.",
       "buttons": [{ "name": "Kontakt", "link": "mailto:bekkcr@herning.dk" }],
       "orientation": "left",
       "background": "red"
