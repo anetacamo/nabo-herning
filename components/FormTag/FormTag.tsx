@@ -17,9 +17,7 @@ export default function FormTag({
   memberTags,
   onCloseClick,
   blogs,
-
   data,
-
   onValueUpdate,
 }: FormTagProps) {
   const allTags: string[] = [];
@@ -43,8 +41,8 @@ export default function FormTag({
         />
 
         <select
-          name="optionChoice"
-          id="optionChoice"
+          name={name}
+          id={name}
           onChange={(e) => onValueUpdate(e.target.value)}
           className={styles.input}
         >

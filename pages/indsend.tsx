@@ -1,6 +1,8 @@
 import { faCheck, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMemo, useState } from "react";
+
+import { useForm, ValidationError } from "@formspree/react";
 import FormArea from "../components/FormArea/FormArea";
 import FormItem from "../components/FormItem/FormItem";
 import FormSelectCategory from "../components/FormSelectCategory/FormSelectCategory";
@@ -41,6 +43,8 @@ interface NewMemberProps {
 }
 
 const NewMember = ({ blogs, updated }: NewMemberProps) => {
+  const [state, handleSubmit] = useForm("myzknpoj");
+
   const [member, setMember] = useState(emptyMember);
   const [formSent, setFormSent] = useState(false);
   const [spam, setSpam] = useState("");
@@ -58,6 +62,22 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
     }
   }, [member.title, member.description, member.category]);
 
+  if (state.succeeded) {
+    return (
+      <DefaultLayout
+        updated={updated}
+        title={pagedata.title}
+        description={pagedata.meta ?? pagedata.description}
+      >
+        <section>
+          <h1>{pagedata.title}</h1>
+          <p>{pagedata.description}</p>
+          <p>{pagedata.form_submitted_message}</p>
+        </section>
+      </DefaultLayout>
+    );
+  }
+
   return (
     <DefaultLayout
       updated={updated}
@@ -66,9 +86,10 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
     >
       <section>
         <form
+          onSubmit={handleSubmit}
           className={styles.form}
-          method="POST"
-          action={process.env.NEXT_PUBLIC_SUBMIT_FORM}
+          // method="POST"
+          // action={process.env.NEXT_PUBLIC_SUBMIT_FORM}
         >
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>
@@ -142,6 +163,17 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
               />
             );
           })}
+
+          <FormItem
+            name="email"
+            value={member.email}
+            onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setMember({
+                ...member,
+                email: e.target.value,
+              })
+            }
+          />
 
           <FormItem
             name="email"
