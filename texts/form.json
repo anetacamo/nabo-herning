@@ -41,9 +41,5 @@
     "label": "Hvordan kan man bruge denne ressource?",
     "helper": "Practical information for potential visitors. opening hours, costs, how does it work, what can you do there and on what terms?",
     "type": "formarea"
-  },
-  "emal": {
-    "label": "Contact email",
-    "helper": "Optional contact person if anything is missing regarding your submission."
   }
 }

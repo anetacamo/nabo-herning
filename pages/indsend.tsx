@@ -70,9 +70,11 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
         description={pagedata.meta ?? pagedata.description}
       >
         <section>
-          <h1>{pagedata.title}</h1>
-          <p>{pagedata.description}</p>
-          <p>{pagedata.form_submitted_message}</p>
+          <form className={styles.form}>
+            <h1>{pagedata.title}</h1>
+            <p>{pagedata.description}</p>
+            <p>{pagedata.form_submitted_message}</p>
+          </form>
         </section>
       </DefaultLayout>
     );
@@ -85,12 +87,7 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
       description={pagedata.meta ?? pagedata.description}
     >
       <section>
-        <form
-          onSubmit={handleSubmit}
-          className={styles.form}
-          // method="POST"
-          // action={process.env.NEXT_PUBLIC_SUBMIT_FORM}
-        >
+        <form onSubmit={handleSubmit} className={styles.form}>
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>
           {Object.keys(formdata).map((key) => {
@@ -164,7 +161,7 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
             );
           })}
 
-          <FormItem
+          {/* <FormItem
             name="email"
             value={member.email}
             onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -173,7 +170,7 @@ const NewMember = ({ blogs, updated }: NewMemberProps) => {
                 email: e.target.value,
               })
             }
-          />
+          /> */}
 
           <FormItem
             name="email"
