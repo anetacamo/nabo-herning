@@ -4,48 +4,48 @@
     "icon": "star",
     "image": "event",
     "color": "red",
-    "about": "Steder der udstiller visuel kunst, for eks; tegninger, malerier, skulpturer. Søg gennem sub-tags ligesom cafe, galleri, museum, til at spise ned. Husk at visuel kunst kan udstillets alle mulige stede, ligesom butikker og kulturhuse, også."
+    "about": "Steder der udstiller visuel kunst; tegninger, malerier, skulpturer eller lignende. Brug udstillingsressourcerne til at få inspiration eller finde et sted at udstille din egen kunst, afholde fernisering eller noget helt tredje!"
   },
   {
     "name": "venue",
     "icon": "house",
     "image": "venue",
     "color": "yellow",
-    "about": "det er steder for udstilling af kunst på scenen, performancekunst, musik, teater mv."
+    "about": "Steder der faciliterer kunst på scenen; musik, performancekunst, teater eller lignende. Brug venueressourcerne til at få inspiration eller finde et sted at afholde din koncert, digtoplæsning eller noget helt tredje!"
   },
   {
     "name": "fællesskab",
     "icon": "fire",
     "image": "faellesskab",
     "color": "blue",
-    "about": "disse er grupper og kollektiver, der mødes omkring en fælles interesse. Find et hold at skateboarde med eller et DJ kollektiv til at spille til dit arrangement."
+    "about": "Grupper og/eller kollektiver, der mødes omkring en fælles interesse. Brug fællesskabsressourcerne til at finde et hold at skateboarde med, et DJ kollektiv til at spille til dit arrangement eller noget helt tredje!"
   },
   {
     "name": "kreativ produktion",
     "icon": "glasses",
     "image": "workshop",
     "color": "darkblue",
-    "about": "Disser er steder, der har fokus på kreativ produktion."
+    "about": "Steder og/eller firmaer, der har fokus på kreativ produktion. Brug kreativ produktion ressourcerne til at finde et musikstudie, fotostudie eller noget helt tredje!"
   },
   {
     "name": "økonomisk støtte",
     "icon": "airplane",
     "image": "outside",
     "color": "greenlight",
-    "about": "Her finder du steder du kan finde finansiel støtte til dit projekt."
+    "about": "Steder og/eller fonde, der kan hjælpe dig med finansiel støtte til dit projekt. Brug økonomisk støtte ressourcerne til at søge om midler til din næste koncert, festival eller noget helt tredje!"
   },
   {
     "name": "ressourcer til projektafvikling",
     "icon": "mocca",
     "image": "studio",
     "color": "pinkdark",
-    "about": "Disse er steder, der tilbyder ting, du måske har brug for, når du arbejder med kunst og kultur. En gratis møbelbutik, et trykkeri, steder at låne tøj mv."
+    "about": "Steder, enkeltpersoner, offentligt tilgængelige tilbud eller lignende, der kan hjælpe dig på vej med dit projekt. Brug denne projektafviklingsressource til at finde sparringspartnere, frivillige hænder eller noget helt tredje!"
   },
     {
     "name": "samlingssteder",
     "icon": "mocca",
     "image": "studio",
     "color": "orange",
-    "about": "Disse er gode samlingssteder for at f. eks mødes til at snakke jeres projekt."
+    "about": "Steder hvor man kan mødes og samles om kulturen. Brug samlingsstedressourcerne til at finde mødelokaler, kulturcaféer eller noget helt tredje!"
   }
 ]
