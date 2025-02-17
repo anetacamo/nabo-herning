@@ -12,7 +12,6 @@ import styles from "./Home/Home.module.scss";
 
 export async function getStaticProps() {
   const { blogs, updated } = await fetchGoogleSheetData();
-
   return {
     props: {
       blogs,
