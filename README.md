@@ -58,7 +58,8 @@ git pull origin main --allow-unrelated-histories
 1. website: set up descriptions & content in the sections
    (this is done by markdown files and raw json data in github)
 2. fill in the google doc sheets
-3. #### maintanance.
+
+#### maintanance.
 
 the google sheets has two sections:
 
