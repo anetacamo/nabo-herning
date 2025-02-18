@@ -30,7 +30,7 @@ export default function MapGl({ posts }: MapGlProps) {
         <div className={styles.mainTitle}>
           <h1>
             <span className={`${styles.highlighted} bg-blue`}>
-              Kultur Kortet
+              Kultur-Kortet
             </span>
             <br />
             <span className={`${styles.highlighted} bg-blue`}>Herning</span>
