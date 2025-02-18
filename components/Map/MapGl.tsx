@@ -38,13 +38,13 @@ export default function MapGl({ posts }: MapGlProps) {
           <p>
             {/* <span className="highlighted bg-blue">{pagedata.description}</span> */}
             <span className={`${styles.highlighted} bg-blue`}>
-              Kort og liste over organisationer,
+              Kort og liste over ressourcer 
             </span>{" "}
             <span className={`${styles.highlighted} bg-blue`}>
-              udstillingsteder, venues, eventskabere,
+              for kulturskabere i og omkring 
             </span>{" "}
             <span className={`${styles.highlighted} bg-blue`}>
-              fælleskaber, og andre ressourcer
+              Herning Kommune.
             </span>{" "}
           </p>
         </div>
