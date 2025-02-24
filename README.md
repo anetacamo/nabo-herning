@@ -11,7 +11,7 @@ info about colors:
 https://github.com/anetacamo/nabo-herning/blob/main/texts/README.md
 
 websites:
-https://nabo-herning.vercel.app/
+https://herning.kultur-kortet.dk
 
 This project is opensource and built with next, react and typescript
 node version: 20.7.1
