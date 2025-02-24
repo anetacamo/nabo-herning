@@ -1,7 +1,5 @@
 ## about project
 
-link to sheets (Placeholder):
-https://docs.google.com/spreadsheets/d/1P_oT7oGCgBRAeHpAB1OUaV6IzyNEX-1-5JeZpjLqgtM/edit?gid=0#gid=0
 
 texts to edit:
 https://github.com/anetacamo/nabo-herning/tree/main/texts
