@@ -24,4 +24,3 @@ So if the place is called `Musikhuset Elværket`
 + purple: #c073ff;
 + purpledark: #4f18d9;
 + black: black;
-
