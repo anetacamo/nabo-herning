@@ -57,7 +57,7 @@ git pull origin main --allow-unrelated-histories
    (this is done by markdown files and raw json data in github)
 2. fill in the google doc sheets
 
-#### maintanance.
+#### maintanance
 
 the google sheets has two sections:
 
