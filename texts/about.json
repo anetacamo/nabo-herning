@@ -7,7 +7,7 @@
   "sections": [
     {
       "title": "Skal din ressource med på kortet?",
-      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.herning.dk'>Herning Kommune</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne",
+      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.herning.dk'>Herning Kommune</a> og Kulturelt Samråd Herning, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "right",
       "background": "green"
