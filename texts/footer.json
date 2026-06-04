@@ -3,11 +3,12 @@
     "title": "Om Kultur Kortet",
     "text": "Kultur-Kortet Herning er et overblik over ressourcer til kulturskabere i og omkring Herning.",
     "lines": "<a href='/om'>Læs mere her</a><br/><br/>Vedligeholdt af Kultur og Fritid, Herning Kommune samt Kulturelt Samråd Herning.",
-    "image": "/images/logo/logo-white-wide.png"
+    "image": "/images/logo/hk_logo_bred_neg-ved-siden-af-logo.png"
   },
   {
     "title": "Contact",
-    "lines": "<a href='https://www.herning.dk' rel='noopener noreferrer'  target='_blank' >Herning Kommune</a><br/>Torvet 5, 7400 Herning<br/>Herning<br/><a href='mailto:bekkcr@herning.dk' rel='noopener noreferrer' target='_blank' >bekkcr@herning.dk</a>"
+    "lines": "<a href='https://www.herning.dk' rel='noopener noreferrer'  target='_blank' >Herning Kommune</a><br/>Torvet 5, 7400 Herning<br/>Herning<br/><a href='mailto:bekkcr@herning.dk' rel='noopener noreferrer' target='_blank' >bekkcr@herning.dk</a>",
+    "image": "/images/logo/logo-white-wide.png"
   },
   {
     "lines": "<br/>Skal dit projekt/ressource være med på kortet?<br/><a href='/indsend'>Indsend</a><br/><br/>Skal din by have et kultur-kort?<br/><a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a><br/><a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"
