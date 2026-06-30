@@ -21,7 +21,6 @@ node version: 20.7.1
 ### development
 
 1. create new repository
-
 https://github.com/new
 
 2. duplicate the whole project on the local machine
