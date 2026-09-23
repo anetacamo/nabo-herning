@@ -1,6 +1,6 @@
 ## about project
 
-texts to edit:
+texts to edit:   
 https://github.com/anetacamo/nabo-herning/tree/main/texts
 
 images to add:
