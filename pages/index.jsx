@@ -7,7 +7,10 @@ import MapGl from "../components/Map/MapGl";
 import TagsList from "../components/TagsList/TagsList";
 import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/home.json";
-import { fetchGoogleSheetData } from "../hooks/data";
+import {
+  fetchGoogleSheetData,
+  SHEET_REVALIDATE_SECONDS,
+} from "../hooks/data";
 import styles from "./Home/Home.module.scss";
 
 export async function getStaticProps() {
@@ -17,6 +20,7 @@ export async function getStaticProps() {
       blogs,
       updated,
     },
+    revalidate: SHEET_REVALIDATE_SECONDS,
   };
 }
 

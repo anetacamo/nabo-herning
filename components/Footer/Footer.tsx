@@ -46,9 +46,9 @@ export default function Footer({ updated }) {
               </div>
             )}
 
-            {s.updated && (
+            {s.updated && moment(updated, "D/M/YY", true).isValid() && (
               <p>
-                <i>{moment(updated, "D/M/YY").format("MMMM D, YYYY")}</i>
+                <i>{moment(updated, "D/M/YY", true).format("MMMM D, YYYY")}</i>
               </p>
             )}
             {index === sections.length - 1 && (
