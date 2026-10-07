@@ -13,6 +13,7 @@ interface LayoutProps {
   searchQuery?: string;
   onSearchQueryChange?: (e: string) => void;
   darkMode?: boolean;
+  updated?: string | null;
 }
 
 export const DefaultLayout = ({

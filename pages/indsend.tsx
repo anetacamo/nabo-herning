@@ -20,7 +20,10 @@ import CardType, {
 } from "../types/card.type";
 
 import styles from "./NewMember/NewMember.module.scss";
-import { fetchGoogleSheetData } from "../hooks/data";
+import {
+  fetchGoogleSheetData,
+  SHEET_REVALIDATE_SECONDS,
+} from "../hooks/data";
 
 export async function getStaticProps() {
   const { blogs, updated } = await fetchGoogleSheetData();
@@ -30,6 +33,7 @@ export async function getStaticProps() {
       blogs,
       updated,
     },
+    revalidate: SHEET_REVALIDATE_SECONDS,
   };
 }
 
