@@ -18,7 +18,7 @@
     {
       "title": "Kortets Indhold",
       "text": "Hvis du har rettelser, eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakt til os.",
-      "buttons": [{ "name": "Kontakt", "link": "mailto:bekkcr@herning.dk" }],
+      "buttons": [{ "name": "Kontakt", "link": "mailto:bekamx@herning.dk" }],
       "orientation": "left",
       "background": "red"
     },
