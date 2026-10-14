@@ -47,7 +47,7 @@ interface NewMemberProps {
 }
 
 const NewMember = ({ blogs, updated }: NewMemberProps) => {
-  const [state, handleSubmit] = useForm("myzknpoj");
+  const [state, handleSubmit] = useForm("myeknorv");
 
   const [member, setMember] = useState(emptyMember);
   const [formSent, setFormSent] = useState(false);
